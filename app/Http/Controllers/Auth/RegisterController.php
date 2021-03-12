@@ -75,15 +75,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'p_iva'=> $data['p_iva'],
+            'description'=> $data['description'],
             'address'=> $data['address'],
-            'slug'=>Str::slug($data['slug'])
+            'slug'=>Str::slug($data['name']),
+            'img_path'=> $data["img_path"] = Storage::disk('public')->put('restaurant_images', $data["img_path"])
 
         ]);
         $user->categories()->attach($data['categories']);
-
-        if(!empty($data["img_path"])) {
-            $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
-        }
     }
     // funzione pubblica per mostrare i vari tag delle categorie
     public function showRegistrationForm()
