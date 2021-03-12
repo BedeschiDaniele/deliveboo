@@ -13,4 +13,11 @@ class Dish extends Model
         'price',
         'visible'
     ];
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+    public function orders() {
+        return $this->belongsToMany('App\Order');
+    }
 }

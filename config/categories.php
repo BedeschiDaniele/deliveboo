@@ -4,52 +4,52 @@ $genres = [
     [
         'name' => 'Italiano',
         'slug' => 'italiano',
-        'img_path' => 'img/categoreries/italian.png'
+        'img_path' => 'img/categories/italian.png'
     ],
     [
         'name' => 'Americano',
         'slug' => 'americano',
-        'img_path' => 'img/categoreries/american.png'
+        'img_path' => 'img/categories/american.png'
     ],
     [
         'name' => 'FastFood',
         'slug' => 'fastfood',
-        'img_path' => 'img/categoreries/burger.png'
+        'img_path' => 'img/categories/burger.png'
     ],
     [
         'name' => 'Cinese',
         'slug' => 'cinese',
-        'img_path' => 'img/categoreries/chinese.png'
+        'img_path' => 'img/categories/chinese.png'
     ],
     [
         'name' => 'Vegetariano',
         'slug' => 'vegetariano',
-        'img_path' => 'img/categoreries/healty.png'
+        'img_path' => 'img/categories/healty.png'
     ],
     [
         'name' => 'Indiano',
         'slug' => 'indiano',
-        'img_path' => 'img/categoreries/indian.png'
+        'img_path' => 'img/categories/indian.png'
     ],
     [
         'name' => 'Giapponese',
         'slug' => 'giapponese',
-        'img_path' => 'img/categoreries/japanese.png'
+        'img_path' => 'img/categories/japanese.png'
     ],
     [
         'name' => 'SteakHouse',
         'slug' => 'steakhouse',
-        'img_path' => 'img/categoreries/meat.png'
+        'img_path' => 'img/categories/meat.png'
     ],
     [
         'name' => 'Pizzeria',
         'slug' => 'pizzeria',
-        'img_path' => 'img/categoreries/pizza.png'
+        'img_path' => 'img/categories/pizza.png'
     ],
     [
         'name' => 'Pesce',
         'slug' => 'pesce',
-        'img_path' => 'img/categoreries/seafood.png'
+        'img_path' => 'img/categories/seafood.png'
     ]
 ];
 

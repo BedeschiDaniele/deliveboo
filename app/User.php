@@ -25,6 +25,9 @@ class User extends Authenticatable
         'img_path',
         'p_iva'
     ];
+    public function categories() {
+        return $this->belongsToMany('App\Category');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

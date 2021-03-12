@@ -14,4 +14,7 @@ class Order extends Model
         'order_status',
         'total_price'
     ];
+    public function dishes() {
+        return $this->belongsToMany('App\Dish');
+    }
 }

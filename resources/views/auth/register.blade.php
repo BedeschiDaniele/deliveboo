@@ -104,6 +104,18 @@
                             </div>
                         </div>
 
+                        @foreach ($categories as $category)         
+                         <div class="form-group row">
+
+                            <div class="custom-control custom-checkbox">
+                             <input type="checkbox" class="custom-control-input" id="category-{{ $category->id }}" name="categories[]" value="{{ $category->id }}">
+                             <label class="custom-control-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+                            </div>
+
+                        </div>
+                        @endforeach
+                        
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
