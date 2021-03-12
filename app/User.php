@@ -29,6 +29,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Category');
     }
 
+    public function dishes(){
+        return $this->hasMany('App\Dish');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

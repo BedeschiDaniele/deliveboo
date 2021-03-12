@@ -70,7 +70,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -82,6 +83,7 @@ class RegisterController extends Controller
 
         ]);
         $user->categories()->attach($data['categories']);
+        return $user;
     }
     // funzione pubblica per mostrare i vari tag delle categorie
     public function showRegistrationForm()
