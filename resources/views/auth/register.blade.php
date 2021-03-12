@@ -103,17 +103,20 @@
                                 <input id="img_path" type="file" class="form-control"  name="img_path" accept="image/*">
                             </div>
                         </div>
-
-                        @foreach ($categories as $category)         
+                       
+                       
                          <div class="form-group row">
-
-                            <div class="custom-control custom-checkbox">
-                             <input type="checkbox" class="custom-control-input" id="category-{{ $category->id }}" name="categories[]" value="{{ $category->id }}">
-                             <label class="custom-control-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+                            <div class="text-center">
+                                @foreach ($categories as $category)         
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="category-{{ $category->id }}" name="categories[]" value="{{ $category->id }}">
+                                    <label class="form-check-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+                                </div>
+                                @endforeach
                             </div>
-
                         </div>
-                        @endforeach
+                     
+                     
                         
 
                         <div class="form-group row mb-0">
