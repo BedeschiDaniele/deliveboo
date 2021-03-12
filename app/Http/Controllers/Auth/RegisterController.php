@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'p_iva'=>['required', 'string', 'size:11'],
+            'address'=>['required', 'string', 'max:255'],
+            'img_path'=>['image']
         ]);
     }
 
@@ -76,13 +80,16 @@ class RegisterController extends Controller
 
         ]);
         $user->categories()->attach($data['categories']);
-    }
 
+        if(!empty($data["img_path"])) {
+            $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
+        }
+    }
+    // funzione pubblica per mostrare i vari tag delle categorie
     public function showRegistrationForm()
     {
         $categories = Category::all();
         return view('auth.register', compact('categories'));
     }
 
-     
 }
