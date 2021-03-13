@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin') // prefisso rotte
+    ->namespace('Admin') // namespace (sottocartelle Controller)
+    ->middleware('auth') // filtro per autenticazione
+    ->name('admin.') // prefisso di tutti i nomi delle rotte
+    ->group(function() {
+
+        Route::resource('dishes', 'DishController');
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    }
+);
