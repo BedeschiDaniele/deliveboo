@@ -61,5 +61,6 @@
               @endforeach
           </tbody>
       </table> 
+      <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary mb-4">Torna alla dashboard</a>
 
 @endsection

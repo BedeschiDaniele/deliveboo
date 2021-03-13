@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'p_iva'=>['required', 'string', 'size:11'],
             'address'=>['required', 'string', 'max:255'],
-            'img_path'=>['image']
+            'img_path'=>['required', 'image']
         ]);
     }
 
@@ -78,12 +78,12 @@ class RegisterController extends Controller
             'description'=> $data['description'],
             'address'=> $data['address'],
             'slug'=>Str::slug($data['name']),
+            'img_path'=>Storage::disk('public')->put('restaurant_images', $data["img_path"])
         ]);
 
-        if(!empty($data["img_path"])) {
-            $data["img_path"] = Storage::disk('public')->put('restaurant_images', $data["img_path"]);
-            $user["img_path"] = $data["img_path"];
-        }
+        // if(!empty($data["img_path"])) {
+        //     $data["img_path"] = Storage::disk('public')->put('restaurant_images', $data["img_path"]);
+        // }
         $user->categories()->attach($data['categories']);
         return $user;
     }
