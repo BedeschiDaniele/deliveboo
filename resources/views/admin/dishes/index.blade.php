@@ -34,9 +34,15 @@
                       <td>{{ $dish->name }}</td>
                       <td>{{ $dish->description }}</td>
                       <td>{{ $dish->price }}</td>
-                      <td>{{ $dish->visible }}</td>
                       <td>
-                          <img src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}">
+                         @if ( $dish->visible )
+                         SI
+                         @else
+                           NO
+                       @endif 
+                      </td>
+                      <td>
+                          <img src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}" style="max-width: 300px">
                       </td>
                       <td>
                           <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-info">Mostra</a>

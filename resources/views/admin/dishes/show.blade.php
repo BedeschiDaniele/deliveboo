@@ -19,7 +19,7 @@
     <tr>
         <td><strong>Immagine</strong></td>
         <td>
-            <img src="{{ asset('storage/' . $dish->img_path) }}" alt="" style="max-width: 100px">
+            <img src="{{ asset('storage/' . $dish->img_path) }}" alt="" style="max-width: 300px">
         </td>
     </tr>
     <tr>
@@ -33,9 +33,9 @@
     <tr>
       <td><strong>Visibilità</strong></td>
       <td>
-        @if ( $dish->visible == 1 )
+        @if ( $dish->visible )
           SI
-          @else 
+          @else
             NO
         @endif
       </td>

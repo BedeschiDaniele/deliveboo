@@ -57,6 +57,9 @@ class DishController extends Controller
         if(!empty($data["img_path"])) {
             $data["img_path"] = Storage::disk('public')->put('dish_images', $data["img_path"]);
         }
+        if(empty($data["visible"])) {
+            $data["visible"] = 0;
+        }
         $newDish->fill($data)->save();
 
         return redirect()->route('admin.dishes.index')->with('message',"Piatto creato con successo");
@@ -102,8 +105,11 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()
+        ->route('admin.dishes.index')
+        ->with('deleted', 'Piatto ' . $dish->name . ' eliminato correttamente');
     }
 }
