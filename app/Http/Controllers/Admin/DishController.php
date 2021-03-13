@@ -43,7 +43,14 @@ class DishController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
+        //dd($data);
+        $newDish = new Dish();
+
+        if(!empty($data["img_path"])) {
+            $data["img_path"] = Storage::disk('public')->put('dish_images', $data["img_path"]);
+        }
+        $newDish->fill($data)->save();
+
         return redirect()->route('admin.dishes.index')->with('message',"Piatto creato con successo");
     }
 
