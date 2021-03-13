@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="price">Prezzo</label>
-            <input type="text" class="form-control" name="price" id="price" placeholder="Nome Piatto" value="{{ old('price') }}">
+            <input type="text" class="form-control" name="price" id="price" placeholder="Prezzo" value="{{ old('price') }}">
         </div>
         <div class="form-group">
             <label for="img_path" class="col-form-label d-block">{{ __('Carica Immagine') }}</label>

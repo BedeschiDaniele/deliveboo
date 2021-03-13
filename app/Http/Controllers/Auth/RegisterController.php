@@ -70,7 +70,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -78,16 +77,17 @@ class RegisterController extends Controller
             'p_iva'=> $data['p_iva'],
             'description'=> $data['description'],
             'address'=> $data['address'],
-            'slug'=>Str::slug($data['name'])
+            'slug'=>Str::slug($data['name']),
         ]);
 
         if(!empty($data["img_path"])) {
             $data["img_path"] = Storage::disk('public')->put('restaurant_images', $data["img_path"]);
+            $user["img_path"] = $data["img_path"];
         }
-
         $user->categories()->attach($data['categories']);
         return $user;
     }
+    
     // funzione pubblica per mostrare i vari tag delle categorie
     public function showRegistrationForm()
     {

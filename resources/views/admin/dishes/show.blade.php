@@ -4,7 +4,7 @@
  
   <div class="clearfix my-4">
     <h1 class="float-left">Dettaglio Piatto "{{ $dish->name }}"</h1>
-    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary float-right mb-4">Elenco piatto</a>
+    <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary float-right mb-4">Elenco piatti</a>
   </div>
 
   <table class="table table-striped table-bordered my-4">

@@ -82,9 +82,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -94,9 +94,28 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        $data = $request->all();
+        $request->validate($this->dishValidation);
+        if(!empty($data["img_path"])) {
+
+            if(!empty($dish->img_path)) {
+
+                Storage::disk('public')->delete($dish->img_path);
+            }
+
+            $data["img_path"] = Storage::disk('public')->put('dish_images', $data["img_path"]);
+        }
+
+        if(empty($data["visible"])) {
+            $data["visible"] = 0;
+        }
+
+        $dish->update($data);
+        return redirect()
+        ->route('admin.dishes.index')
+        ->with('message', 'Piatto ' . $dish->name . ' aggiornato correttamente');
     }
 
     /**
@@ -107,6 +126,10 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
+        if(!empty($dish->img_path)) {
+
+            Storage::disk('public')->delete($dish->img_path);
+        }
         $dish->delete();
         return redirect()
         ->route('admin.dishes.index')
