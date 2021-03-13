@@ -8,7 +8,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         @yield('content')
     </div>
 </body>

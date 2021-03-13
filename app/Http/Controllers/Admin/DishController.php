@@ -8,9 +8,17 @@ use App\Dish;
 use App\User;
 use App\Category;
 use App\Order;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
+    private $dishValidation = [
+        'name' => 'required',
+        'img_path' => 'image',
+        'price' => 'required | numeric',
+        'visible' => 'boolean'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -42,8 +50,8 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
-        //dd($data);
+        $data["user_id"]= Auth::id();
+        $request->validate($this->dishValidation);
         $newDish = new Dish();
 
         if(!empty($data["img_path"])) {

@@ -11,7 +11,8 @@ class Dish extends Model
         'description',
         'img_path',
         'price',
-        'visible'
+        'visible',
+        'user_id'
     ];
 
     public function user() {
