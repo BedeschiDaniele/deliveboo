@@ -27,6 +27,13 @@
 
             <div id="app">
                <h1>@{{ message }}</h1>
+               <div v-for="restaurant in restaurants" class="card" style="width: 18rem;">
+                <img class="card-img-top" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
+                <div class="card-body">
+                  <h5 class="card-title">@{{ restaurant.name }}</h5>
+                  <p class="card-text">@{{ restaurant.description }}</p>
+                </div>
+              </div>
             </div>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
