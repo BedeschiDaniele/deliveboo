@@ -1,0 +1,49 @@
+.dashboard-card {
+    background-color: #343a40;
+}
+.dashboard-btn {
+    background-color: $brand-orange;
+    border: 1px solid $brand-orange;
+    &:hover {
+        background-color: darken($brand-orange, 5%);
+        border: 1px solid $brand-orange;
+    }
+}
+
+#dashboard-cards {
+    display: flex;
+    justify-content: center;
+    .card {
+        width: calc(30%);
+        margin: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+            padding: 20px;
+        }
+    }
+}
+
+.table-index {
+    img {
+        max-width: 150px;
+    }
+}
+
+.table-show {
+    img {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #dashboard-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card {
+            width: calc(100% / 2);
+            margin: 50px;
+        }
+    }
+}
