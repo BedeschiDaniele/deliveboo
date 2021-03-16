@@ -23,4 +23,6 @@ Route::namespace('Api')->group(function () {
     Route::get('/restaurants', 'UserController@restaurants');
 
     Route::get('/categories', 'UserController@categories');
+
+    Route::get('/filtered/{category}', 'UserController@filtered');
 });

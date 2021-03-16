@@ -6,9 +6,10 @@ import Vue from 'vue/dist/vue';
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!',
+    selectedCategory: "all",
     restaurants: [],
-    categories: []
+    categories: [],
+    filteredRestaurant: []
   },
   mounted: function() {
     
@@ -16,15 +17,25 @@ var app = new Vue({
     .get('http://127.0.0.1:8000/api/restaurants')
     .then((response) => {
       this.restaurants = response.data;
-      console.log(this.restaurants);
+      // console.log(this.restaurants);
     });
 
     axios
     .get('http://127.0.0.1:8000/api/categories')
     .then((response) => {
       this.categories = response.data;
-      console.log(this.categories);
+      // console.log(this.categories);
     });
+  },
+  methods: {
+    filterCategory: function() {
+      axios
+      .get('http://127.0.0.1:8000/api/filtered/' + this.selectedCategory)
+      .then((response) => {
+        this.filteredRestaurant = response.data;
+        console.log(response.data);
+      });
+    }
   }
 
 })
