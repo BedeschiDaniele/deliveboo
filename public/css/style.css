@@ -214,6 +214,7 @@
 
 .home-restaurants {
   text-align: center;
+  padding-bottom: 50px;
 }
 .home-restaurants .restaurant-container {
   text-align: left;
@@ -366,7 +367,6 @@ footer #footer-center .mycontainer .inline-ul li {
   margin-right: 8px;
 }
 footer #footer-bottom {
-  height: 70px;
   border-bottom: 1px solid grey;
 }
 footer #footer-bottom .mycontainer {

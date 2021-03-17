@@ -72,9 +72,6 @@
                 <li><a href="">Sitemap</a></li>
             </ul>
         </div>
-        <div>
-            <img src="{{ asset("https://lh3.googleusercontent.com/proxy/j3jZzJN-JPmuiUNvArHuilEZe_5tAQJRASco9vso9MwSrt0N0CQPPT2dJiHm0uW6QDO-xKBvbbrGsaZqPjSFs3LbejZPFGpNokgChZEgkqFXhTrWbeRRxFh-G4hG7aNFCt8hrC7JjQ")}}" alt="">
-        </div>
     </div>
 </div>
 
