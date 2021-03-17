@@ -10,3 +10,101 @@
   padding: 0 30px;
   margin: 0 auto;
 }
+
+footer {
+  background-color: #0A0A0A;
+  color: white;
+}
+footer #footer-top {
+  height: 120px;
+  border-bottom: 1px solid grey;
+}
+footer #footer-top .mycontainer {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+footer #footer-top form {
+  margin-top: 10px;
+}
+footer #footer-top input {
+  width: 250px;
+  padding: 10px;
+}
+footer #footer-top button {
+  background-color: orange;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  transition: 0.3s;
+}
+footer #footer-top button:hover {
+  cursor: pointer;
+  background-color: #E38802;
+}
+footer #footer-top select {
+  background-color: #1E1E1E;
+  padding: 5px;
+  color: white;
+  border-radius: 3px;
+}
+footer #footer-center {
+  height: 300px;
+  border-bottom: 1px solid grey;
+}
+footer #footer-center .mycontainer {
+  display: flex;
+  padding: 55px 0px;
+}
+footer #footer-center .mycontainer p {
+  color: #D7D7D7;
+}
+footer #footer-center .mycontainer li {
+  list-style: none;
+  padding: 2px 0;
+}
+footer #footer-center .mycontainer li a {
+  color: #D7D7D7;
+  text-decoration: none;
+  transition: 0.2s;
+}
+footer #footer-center .mycontainer li a:hover {
+  color: #FFA803;
+}
+footer #footer-center .mycontainer #left {
+  width: 30%;
+}
+footer #footer-center .mycontainer #flex-column {
+  width: 70%;
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+footer #footer-center .mycontainer .inline-ul li {
+  display: inline-block;
+  margin-right: 8px;
+}
+footer #footer-bottom {
+  height: 70px;
+  border-bottom: 1px solid grey;
+}
+footer #footer-bottom .mycontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+footer #footer-bottom .mycontainer .inline-ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+footer #footer-bottom .mycontainer .inline-ul li a {
+  color: #D7D7D7;
+  text-decoration: none;
+  transition: 0.2s;
+}
+footer #footer-bottom .mycontainer .inline-ul li a:hover {
+  color: #FFA803;
+}
+footer #footer-bottom .mycontainer img {
+  height: 45px;
+}
