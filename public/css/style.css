@@ -11,76 +11,197 @@
   margin: 0 auto;
 }
 
-.dashboard-card {
-  background-color: #343a40;
+.home-jumbotron {
+  position: relative;
+  height: 400px;
+  background: url("/img/home/jumbotron.jpeg") no-repeat center center;
+  background-size: cover;
 }
-
-.dashboard-btn {
-  background-color: #FFA803;
-  border: 1px solid #FFA803;
+.home-jumbotron .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.dashboard-btn:hover {
-  background-color: #e99800;
-  border: 1px solid #FFA803;
-}
-
-#dashboard-cards {
+.home-jumbotron .mycontainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-#dashboard-cards .card {
-  width: calc(30%);
-  margin: 50px;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #343a40;
-}
-#dashboard-cards .card img {
-  padding: 20px;
+  height: 100%;
 }
 
-#dashboard-dishes {
+.jumbotron-text {
+  z-index: 1;
+}
+.jumbotron-text .home-h1 {
+  font-size: 3.2em;
+}
+.jumbotron-text .home-h3 {
+  font-size: 1.3em;
+  margin: 15px 0 40px;
+}
+.jumbotron-text .home-h1, .jumbotron-text .home-h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.home-btn {
+  padding: 10px 20px;
+  color: white;
+  background-color: #FFA803;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #FFA803;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.home-btn:hover {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home-CTA {
+  height: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.home-CTA .CTA-card {
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  text-align: center;
+}
+.home-CTA .CTA-img img {
+  height: 50px;
+  margin-bottom: 5px;
+}
+.home-CTA .CTA-text h5 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.home-categories {
+  text-align: right;
+}
+.home-categories .mycontainer {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.home-categories-carousel {
+  text-align: center;
+}
+.home-categories-carousel .mycontainer {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+.home-categories-carousel .carousel-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.03);
 }
-#dashboard-dishes .card {
+.home-categories-carousel .category-card {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  transition: all 0.4s;
+  padding: 0 20px;
+}
+.home-categories-carousel .category-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 6px darkgrey;
+}
+.home-categories-carousel .carousel-img {
+  width: 60px;
+}
+.home-categories-carousel .carousel-text {
+  font-size: 1.12em;
+  font-weight: bold;
+}
+
+.home-restaurants {
+  text-align: center;
+}
+.home-restaurants .restaurant-container {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.home-restaurants .restaurant-container .restaurant-card {
+  max-width: 32%;
+  height: 380px;
+  margin: 15px 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 6px lightgrey;
+  transition: all 0.4s;
+}
+.home-restaurants .restaurant-container .restaurant-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 12px grey;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-image {
+  width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-body {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
-  margin: 20px;
-  border-radius: 10px;
+  height: 180px;
+  padding: 15px;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  -webkit-text-decoration: peru solid overline;
+          text-decoration: peru solid overline;
+  -webkit-text-decoration-skip: objects;
+          text-decoration-skip: objects;
+  transition: all 0.4s;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-title:hover {
+  -webkit-text-decoration-color: #FFA803;
+          text-decoration-color: #FFA803;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-delivery {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  padding: 5px 7px;
+  border-radius: 1px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  background-color: #FFA803;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-address {
+  color: grey;
+  margin-bottom: 0.4em;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-text {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  background-color: #343a40;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  font-style: italic;
+  color: #9D9D9D;
 }
-#dashboard-dishes .card .card-body {
-  flex: none;
-}
-#dashboard-dishes .card img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  padding: 20px;
-}
-
-.table-index img {
-  max-width: 150px;
-}
-
-.table-show img {
-  max-width: 300px;
-}
-
-@media screen and (max-width: 768px) {
-  #dashboard-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  #dashboard-cards .card {
-    width: calc(100% / 2);
-    margin: 50px;
-  }
+.home-restaurants .restaurant-container .restaurant-card .category-tags {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: peru;
 }
