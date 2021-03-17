@@ -4,7 +4,17 @@
     <div class="mycontainer">
         <div class="login-header-top">
             <h1 id="logo"><a href="{{ url('/') }}">Deliveboo</a></h1>
-           <a class="logout" href="{{ url('/home') }}">Home</a>
+            <div class="user-logout">
+                <a class="logout" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                <a class="dropdown-item register" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+            </div>
         </div>
     </div>
        
