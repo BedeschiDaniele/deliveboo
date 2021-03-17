@@ -16,6 +16,9 @@
   justify-content: space-between;
   margin-top: 50px;
 }
+.login-header-top #logo a {
+  color: white;
+}
 .login-header-top .logout {
   padding: 10px 50px;
   background-color: #FFA803;
@@ -479,9 +482,11 @@ footer #footer-bottom .mycontainer img {
 }
 
 .btn-link-orange {
+  display: inline-block;
   font-weight: 400;
   color: #FFA803;
   text-decoration: none;
+  margin-top: 15px;
 }
 
 #return {

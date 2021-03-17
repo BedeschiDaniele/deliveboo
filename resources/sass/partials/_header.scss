@@ -2,6 +2,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+
+  #logo {
+    a {
+      color: white;
+    }
+  }
+
   .logout {
     padding: 10px 50px;
     background-color: $brand-orange;

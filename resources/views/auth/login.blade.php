@@ -1,4 +1,4 @@
-@extends('layouts.guest.main')
+@extends('layouts.admin.login')
 
 @section('content')
 <div class="container space">
@@ -56,21 +56,18 @@
                                 <button type="submit" class="btn btn-orange ">
                                     {{ __('Login') }}
                                 </button>
-                                <button type="submit" class="btn btn-white">
-                                    {{ __('Torna al sito') }}
-                                </button>
                             </div>
                         </div>   
                        <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 @if (Route::has('password.request'))
-                                <a class="btn btn-link-orange" href="{{ route('password.request') }}">
+                                <a class="btn-link-orange" href="{{ route('password.request') }}">
                                     {{ __('Hai dimenticato la password?') }}
                                 </a>
                                  @endif
                             </div>
                             <div class="col-md-8 offset-md-4">
-                                <a class="btn btn-link-orange" href="">
+                                <a class="btn-link-orange" href="">
                                     {{ __('Non hai un account? Registrati ora!') }}
                             </div>
                         </div>

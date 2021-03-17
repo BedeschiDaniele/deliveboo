@@ -17,9 +17,6 @@
       <main>
         @yield('content')
       </main>
-      <footer>
-        @include('guest.footer')
-      </footer>
 
     </body>
 </html>

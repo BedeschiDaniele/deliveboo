@@ -1,4 +1,4 @@
-@extends('layouts.guest.main')
+@extends('layouts.admin.login')
 
 @section('content')
 <div class="container space">
