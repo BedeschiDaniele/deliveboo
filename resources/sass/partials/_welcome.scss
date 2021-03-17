@@ -1,4 +1,4 @@
-$homeGrey: #F3F3F3;
+$homeGrey: rgba(0, 0, 0, 0.03);
 $cardHeight: 380px;
 $cardImage: 200px;
 
@@ -69,19 +69,18 @@ $cardImage: 200px;
     height: 120px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-image: linear-gradient(to bottom, $brand-grey 0%, #fdfbfb 100%);
+    background-color: $homeGrey;
 
     .CTA-card {
       display: inline-block;
       width: 33%;
       height: 100%;
       text-align: center;
-      // border: 1px solid $brand-orange;
     }
 
     .CTA-img {
       img {
-        height: 60px;
+        height: 50px;
         margin-bottom: 5px;
       }
     }
