@@ -42,7 +42,7 @@
             <img class="d-block" src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}"
                 style="max-width: 300px">
             @endif
-            <label for="img_path" class="col-form-label d-block mt-2">{{ __('Carica Immagine') }}</label>
+            <label for="img_path" class="col-form-label mt-4">{{ __('Carica nuova immagine') }}</label>
             <input id="img_path" type="file" name="img_path" accept="image/*">
         </div>
 

@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td><strong>Prezzo</strong></td>
-            <td>{{ $dish->price }}</td>
+            <td>{{ $dish->price }} €</td>
         </tr>
         <tr>
             <td><strong>Descrizione</strong></td>

@@ -33,8 +33,35 @@
   margin: 50px;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #343a40;
 }
 #dashboard-cards .card img {
+  padding: 20px;
+}
+
+#dashboard-dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+}
+#dashboard-dishes .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #343a40;
+}
+#dashboard-dishes .card .card-body {
+  flex: none;
+}
+#dashboard-dishes .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding: 20px;
 }
 

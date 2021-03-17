@@ -18,7 +18,33 @@
         margin: 50px;
         border-radius: 10px;
         overflow: hidden;
+        background-color: #343a40;
         img {
+            padding: 20px;
+        }
+    }
+}
+
+#dashboard-dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 200px;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #343a40;
+        .card-body {
+            flex: none;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
             padding: 20px;
         }
     }
