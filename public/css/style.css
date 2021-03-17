@@ -11,90 +11,55 @@
   margin: 0 auto;
 }
 
-.login-header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-}
-.login-header-top #logo a {
-  color: black;
-}
-.login-header-top .user-logout {
+.user-logout {
   display: flex;
   align-items: center;
-}
-.login-header-top .register {
-  padding: 10px 50px;
-  background-color: #23CAD3;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  font-weight: 700;
-  margin-left: 15px;
-}
-.login-header-top .register a {
-  color: white;
-  text-decoration: none;
-}
-.login-header-top .register a:hover {
-  text-decoration: none;
-}
-.login-header-top .logout {
-  padding: 10px 50px;
-  background-color: #FFA803;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  font-weight: 700;
-}
-.login-header-top .logout a {
-  color: white;
-  text-decoration: none;
-}
-.login-header-top .logout a:hover {
-  text-decoration: none;
 }
 
-.register-header-top {
+.login-header-top, .register-header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
 }
-.register-header-top #logo a {
+.login-header-top #logo a, .register-header-top #logo a {
   color: black;
+  transition: all 0.4s;
 }
-.register-header-top .login {
-  padding: 10px 50px;
+.login-header-top #logo a:hover, .register-header-top #logo a:hover {
+  text-decoration: none;
+  color: #FFA803;
+}
+.login-header-top .login, .register-header-top .login {
+  padding: 8px 50px;
   background-color: #FFA803;
   border-radius: 5px;
   border: none;
+  border: 2px solid #FFA803;
   color: white;
   font-weight: 700;
+  transition: all 0.4s;
 }
-.register-header-top .login a {
-  color: white;
+.login-header-top .login:hover, .register-header-top .login:hover {
   text-decoration: none;
+  color: #FFA803;
+  background-color: white;
 }
-.register-header-top .login a:hover {
-  text-decoration: none;
-}
-.register-header-top .register {
-  padding: 10px 50px;
+.login-header-top .register, .register-header-top .register {
+  padding: 8px 50px;
   background-color: #23CAD3;
   border-radius: 5px;
   border: none;
+  border: 2px solid #23CAD3;
   color: white;
   font-weight: 700;
   margin-left: 15px;
+  transition: all 0.4s;
 }
-.register-header-top .register a {
-  color: white;
+.login-header-top .register:hover, .register-header-top .register:hover {
   text-decoration: none;
-}
-.register-header-top .register a:hover {
-  text-decoration: none;
+  color: #23CAD3;
+  background-color: white;
 }
 
 .home-jumbotron {
@@ -148,6 +113,14 @@
   color: white;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn {
+  padding: 0 10px;
+}
+.filter-btn:hover {
+  color: #FFA803;
+  background-color: white;
 }
 
 .home-CTA {
@@ -312,17 +285,23 @@ footer #footer-top form {
 footer #footer-top input {
   width: 250px;
   padding: 10px;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 footer #footer-top button {
-  background-color: orange;
+  background-color: #FFA803;
   border-radius: 3px;
   padding: 10px;
   color: white;
+  font-weight: bold;
+  border: 2px solid #FFA803;
+  border-radius: 4px;
   transition: 0.3s;
 }
 footer #footer-top button:hover {
   cursor: pointer;
-  background-color: #E38802;
+  text-decoration: none;
+  background-color: rgba(192, 192, 192, 0.12);
 }
 footer #footer-top select {
   background-color: #1E1E1E;

@@ -64,7 +64,7 @@
 				<option value="all">Tutti</option>
 				<option v-for="category in categories" :value="category.name">@{{ category.name }}</option>
 			</select>
-			<button @click='filterCategory'>Trova</button>
+			<button class="home-btn filter-btn" @click='filterCategory'>Trova</button>
 		</div>
 	</div>
 

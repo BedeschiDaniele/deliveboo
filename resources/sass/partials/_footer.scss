@@ -15,16 +15,23 @@ footer {
         input {
             width: 250px;
             padding: 10px;
+            border-radius: 5px;
+            border: 2px solid white;
+            // overflow: hidden;
         }
         button {
-            background-color: orange;
+            background-color: $brand-orange;
             border-radius: 3px;
             padding: 10px;
             color: white;
+            font-weight: bold;
+            border: 2px solid $brand-orange;
+            border-radius: 4px;
             transition: 0.3s;
             &:hover{
-                cursor:pointer;
-                background-color: #E38802;
+                cursor: pointer;
+                text-decoration: none;
+                background-color: rgba(192, 192, 192, 0.12);
             }
         }
         select {

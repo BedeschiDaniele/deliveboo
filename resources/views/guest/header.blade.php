@@ -5,7 +5,7 @@
         <div class="login-header-top">
             <h1 id="logo"><a href="{{ url('/') }}">Deliveboo</a></h1>
             <div class="user-logout">
-                <a class="logout" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                <a class="login" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 <a class="dropdown-item register" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">

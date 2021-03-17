@@ -61,6 +61,14 @@ $cardImage: 200px;
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
+.filter-btn {
+  padding: 0 10px;
+
+  &:hover {
+    color: $brand-orange;
+    background-color: white;
+  }
+}
 
 // /Jumbotron Section
 

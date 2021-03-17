@@ -5,7 +5,7 @@
             <div>
                 <form action="">
                     <input type="email"placeholder="Enter your email">
-                    <button>Subscrive now</button>
+                    <button>Subscribe now</button>
                 </form>
             </div>
         </div>
