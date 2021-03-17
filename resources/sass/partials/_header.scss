@@ -12,6 +12,9 @@
     a {
       color: $brand-white;
       text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -19,7 +22,8 @@
 .register-header-top {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  align-items: center;
+  margin: 20px 0;
   .login {
     padding: 10px 50px;
     background-color: $brand-orange;
@@ -30,6 +34,9 @@
     a {
       color: $brand-white;
       text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   .register {
@@ -43,6 +50,9 @@
     a {
       color: $brand-white;
       text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
