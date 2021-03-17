@@ -1856,26 +1856,41 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
     selectedCategory: "all",
     restaurants: [],
     categories: [],
-    filteredRestaurant: []
+    filteredRestaurant: [],
+    onSearch: false
   },
   mounted: function mounted() {
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
-      _this.restaurants = response.data; // console.log(this.restaurants);
+      _this.onSearch = false;
+      _this.restaurants = response.data;
     });
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
-      _this.categories = response.data; // console.log(this.categories);
+      _this.categories = response.data;
     });
   },
   methods: {
     filterCategory: function filterCategory() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/filtered/' + this.selectedCategory).then(function (response) {
-        _this2.filteredRestaurant = response.data;
-        console.log(response.data);
-      });
+      if (this.selectedCategory == "all") {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+          _this2.onSearch = false;
+          _this2.filteredRestaurant = response.data;
+        });
+      } else {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/filtered/' + this.selectedCategory).then(function (response) {
+          _this2.onSearch = false;
+
+          if (response.data.length > 0) {
+            _this2.filteredRestaurant = response.data;
+            console.log(response.data);
+          } else {
+            _this2.onSearch = true;
+          }
+        });
+      }
     }
   }
 });

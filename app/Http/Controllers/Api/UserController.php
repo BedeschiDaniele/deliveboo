@@ -35,11 +35,11 @@ class UserController extends Controller
         }
        
 
-        // foreach ($restaurants as $restaurant) {
-        //     $categories = [];
-        //     $categories = $restaurant->categories;
-        //     $restaurant->categories = $categories;
-        // };
+         foreach ($restaurants as $restaurant) {
+             $categories = [];
+             $categories = $restaurant->categories;
+             $restaurant->categories = $categories;
+         };
 
         return response()->json($restaurants);
     }

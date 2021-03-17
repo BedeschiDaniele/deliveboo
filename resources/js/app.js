@@ -9,32 +9,48 @@ var app = new Vue({
     selectedCategory: "all",
     restaurants: [],
     categories: [],
-    filteredRestaurant: []
+    filteredRestaurant: [],
+    onSearch: false
   },
   mounted: function() {
     
     axios
     .get('http://127.0.0.1:8000/api/restaurants')
     .then((response) => {
+      this.onSearch=false;
       this.restaurants = response.data;
-      // console.log(this.restaurants);
     });
 
     axios
     .get('http://127.0.0.1:8000/api/categories')
     .then((response) => {
       this.categories = response.data;
-      // console.log(this.categories);
     });
   },
   methods: {
     filterCategory: function() {
-      axios
-      .get('http://127.0.0.1:8000/api/filtered/' + this.selectedCategory)
-      .then((response) => {
-        this.filteredRestaurant = response.data;
-        console.log(response.data);
-      });
+      if(this.selectedCategory== "all") {
+        axios
+        .get('http://127.0.0.1:8000/api/restaurants')
+        .then((response) => {
+          this.onSearch=false;
+          this.filteredRestaurant = response.data;
+    });
+
+      } else {
+        axios
+        .get('http://127.0.0.1:8000/api/filtered/' + this.selectedCategory)
+        .then((response) => {
+          this.onSearch=false;
+          if(response.data.length > 0 ) {
+            this.filteredRestaurant = response.data;
+            console.log(response.data);
+          } else {
+            this.onSearch=true;
+          }
+       });
+      }
+      
     }
   }
 
