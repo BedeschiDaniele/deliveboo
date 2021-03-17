@@ -69,8 +69,11 @@
                                 </a>
                                  @endif
                             </div>
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link-orange" href="">
+                                    {{ __('Non hai un account? Registrati ora!') }}
+                            </div>
                         </div>
-
                     </form>
                 </div>
             </div>
