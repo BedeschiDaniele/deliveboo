@@ -24,7 +24,7 @@ $genres = [
     [
         'name' => 'Vegetariano',
         'slug' => 'vegetariano',
-        'img_path' => 'img/categories/healty.png'
+        'img_path' => 'img/categories/healthy.png'
     ],
     [
         'name' => 'Indiano',
