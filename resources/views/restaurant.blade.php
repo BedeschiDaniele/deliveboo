@@ -20,12 +20,8 @@
     </div>
     <span>@{{calculateTotal}}</span>
     <div>
-      <a href="{{ route('checkout', $restaurant->slug) }}">Vai al checkout</a>
+      <a @click='checkout' href="{{ route('checkout', $restaurant->slug) }}">Vai al checkout</a>
     </div>
-    <div>
-      <a href="#" @click='checkout'>LocalStorage</a>
-    </div>
-    
   </div>
 </div>
 <script src="{{ asset('js/cart.js') }}"></script>
