@@ -18,6 +18,7 @@
       <span>@{{dish.quantity}}</span>
       <span style="font-size: 30px" @click='increaseQuantity(dish)'>+</span>
     </div>
+    <span>@{{calculateTotal}}</span>
     
   </div>
 </div>

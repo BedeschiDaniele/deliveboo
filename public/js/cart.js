@@ -49365,7 +49365,18 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
       this.cart.splice(prodIndex, 1);
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {},
+  computed: {
+    calculateTotal: function calculateTotal() {
+      var total = 0;
+
+      for (var i = 0; i < this.cart.length; i++) {
+        total += this.cart[i].item.price * this.cart[i].quantity;
+      }
+
+      return total;
+    }
+  }
 });
 })();
 

@@ -38,6 +38,15 @@ var app = new Vue({
   },
   mounted: function() {
   
+  },
+  computed: {
+    calculateTotal() {
+      let total = 0;
+      for (let i = 0; i < this.cart.length; i++) {
+        total += this.cart[i].item.price * this.cart[i].quantity;
+      }
+      return total;
+    }
   }
 
 })
