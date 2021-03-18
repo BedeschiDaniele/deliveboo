@@ -49333,11 +49333,38 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
   el: '#cart',
   data: {
-    cart: [],
-    idCart: [],
-    count: 0
+    cart: []
   },
-  methods: {},
+  methods: {
+    addToCart: function addToCart(dish) {
+      for (var i = 0; i < this.cart.length; i++) {
+        if (this.cart[i].item.id === dish.id) {
+          this.cart[i].quantity++;
+          return;
+        }
+      }
+
+      this.cart.push({
+        item: dish,
+        quantity: 1
+      });
+      console.log(this.cart);
+    },
+    increaseQuantity: function increaseQuantity(dish) {
+      dish.quantity++;
+    },
+    decreaseQuantity: function decreaseQuantity(dish) {
+      dish.quantity--;
+
+      if (dish.quantity <= 0) {
+        this.removeProdFromCart(dish);
+      }
+    },
+    removeProdFromCart: function removeProdFromCart(dish) {
+      var prodIndex = this.cart.indexOf(dish);
+      this.cart.splice(prodIndex, 1);
+    }
+  },
   mounted: function mounted() {}
 });
 })();

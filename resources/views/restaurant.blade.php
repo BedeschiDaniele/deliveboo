@@ -12,9 +12,11 @@
           </div>
       @endforeach
     </div>
-    <div class="show-cart" v-for='item in cart'>
-      <h3>@{{item.name}}</h3>
-      <span>@{{item.price}}</span>
+    <div class="show-cart" v-for='dish in cart'>
+      <h3>@{{dish.item.name}}</h3>
+      <span style="font-size: 30px" @click='decreaseQuantity(dish)'>-</span>
+      <span>@{{dish.quantity}}</span>
+      <span style="font-size: 30px" @click='increaseQuantity(dish)'>+</span>
     </div>
     
   </div>
