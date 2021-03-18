@@ -16,5 +16,11 @@ class RestaurantController extends Controller
         return view('restaurant', compact('restaurant'));
     }
 
+    public function checkout($slug) {
+        $restaurant = User::where('slug',$slug)->firstOrFail();
+        return view('checkout', compact('restaurant'));
+    }
+
+
 
 }

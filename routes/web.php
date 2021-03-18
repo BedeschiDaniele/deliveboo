@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'RestaurantController@index');
 Route::get('/restaurant/{slug}', 'RestaurantController@show')->name('restaurant');
+Route::get('/restaurant/{slug}/checkout', 'RestaurantController@checkout')->name('checkout');
 
 Auth::routes();
 

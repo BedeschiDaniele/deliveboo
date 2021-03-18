@@ -49318,9 +49318,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!******************************!*\
-  !*** ./resources/js/cart.js ***!
-  \******************************/
+/*!**********************************!*\
+  !*** ./resources/js/checkout.js ***!
+  \**********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -49331,7 +49331,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
-  el: '#cart',
+  el: '#checkout',
   data: {
     cart: []
   },
@@ -49363,10 +49363,6 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
     removeProdFromCart: function removeProdFromCart(dish) {
       var prodIndex = this.cart.indexOf(dish);
       this.cart.splice(prodIndex, 1);
-    },
-    checkout: function checkout() {
-      var parsed = JSON.stringify(this.cart);
-      localStorage.setItem('cart', parsed);
     }
   },
   computed: {
@@ -49379,6 +49375,17 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
 
       return total;
     }
+  },
+  mounted: function mounted() {
+    if (localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch (e) {
+        localStorage.removeItem('cart');
+      }
+    }
+
+    console.log(this.cart);
   }
 });
 })();

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Vue from 'vue/dist/vue';
 
 var app = new Vue({
-  el: '#cart',
+  el: '#checkout',
   data: {
     cart: []
   },
@@ -34,10 +34,6 @@ var app = new Vue({
     removeProdFromCart(dish) {
       const prodIndex = this.cart.indexOf(dish);
       this.cart.splice(prodIndex, 1);
-    },
-    checkout() {
-      let parsed = JSON.stringify(this.cart);
-      localStorage.setItem('cart', parsed);
     }
   },
   computed: {
@@ -49,4 +45,16 @@ var app = new Vue({
       return total;
     }
   },
+  mounted: function(){
+    if(localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch(e) {
+        localStorage.removeItem('cart');
+      }
+    }
+    console.log(this.cart);
+  }
 })
+
+
