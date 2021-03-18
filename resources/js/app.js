@@ -35,7 +35,7 @@ var app = new Vue({
         .then((response) => {
           this.onSearch=false;
           this.filteredRestaurant = response.data;
-    });
+      });
 
       } else {
         axios
@@ -48,10 +48,9 @@ var app = new Vue({
           } else {
             this.onSearch=true;
           }
-       });
-      }
-      
-    }
-  }
+        });
+      }  
+    },
 
+  }
 })

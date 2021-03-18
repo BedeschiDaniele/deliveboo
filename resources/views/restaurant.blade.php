@@ -2,6 +2,7 @@
 
 @section('content')
 <div id="cart">
+
   <div class="mycontainer">
     <div class="menu">
       <h1>Ristorante {{$restaurant->name}}</h1>
@@ -24,5 +25,7 @@
     </div>
   </div>
 </div>
+
 <script src="{{ asset('js/cart.js') }}"></script>
+
 @endsection

@@ -76,35 +76,41 @@
 
 			<div class="restaurant-container">
 				<div class="restaurant-card" v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false' v-for="(restaurant,indexRestaurant) in restaurants">
-					<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
-					<div class="card-body">
-						<div class="upper-card">
-							<h5 class="card-title">@{{ restaurant.name }}</h5>
-							<span class="card-delivery">CONSEGNA GRATIS</span>
-							<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
-							<p class="card-text">@{{ restaurant.description }}</p>
+					<a :href="'/restaurant/'+restaurant.slug">
+						<div class="image-container">
+							<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
 						</div>
-						<div class="bottom-card">
-							<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+						<div class="card-body">
+							<div class="upper-card">
+								<h5 class="card-title">@{{ restaurant.name }}</h5>
+								<span class="card-delivery">CONSEGNA GRATIS</span>
+								<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
+								<p class="card-text">@{{ restaurant.description }}</p>
+							</div>
+							<div class="bottom-card">
+								<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+							</div>
 						</div>
-						<a :href="'/restaurant/'+restaurant.slug">Dettaglio</a>
-					</div>
+					</a>
 				</div>
 			
 				<div class="restaurant-card" v-if='filteredRestaurant.length > 0 && onSearch==false' v-for="(restaurant,indexRestaurant) in filteredRestaurant">
-					<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
-					<div class="card-body">
-						<div class="upper-card">
-							<h5 class="card-title">@{{ restaurant.name }}</h5>
-							<span class="card-delivery">CONSEGNA GRATIS</span>
-							<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
-							<p class="card-text">@{{ restaurant.description }}</p>
+					<a :href="'/restaurant/'+restaurant.slug">
+						<div class="image-container">
+							<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
 						</div>
-						<div class="bottom-card">
-							<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+						<div class="card-body">
+							<div class="upper-card">
+								<h5 class="card-title">@{{ restaurant.name }}</h5>
+								<span class="card-delivery">CONSEGNA GRATIS</span>
+								<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
+								<p class="card-text">@{{ restaurant.description }}</p>
+							</div>
+							<div class="bottom-card">
+								<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+							</div>
 						</div>
-						<a :href="'/restaurant/'+restaurant.slug">Dettaglio</a>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>

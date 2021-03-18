@@ -164,6 +164,7 @@
 .home-categories-carousel .carousel-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   border: 2px solid rgba(0, 0, 0, 0.03);
 }
 .home-categories-carousel .category-card {
@@ -209,11 +210,31 @@
   cursor: pointer;
   box-shadow: 0 0 12px grey;
 }
+.home-restaurants .restaurant-container .restaurant-card:hover .card-title {
+  -webkit-text-decoration-color: #FFA803;
+          text-decoration-color: #FFA803;
+}
+.home-restaurants .restaurant-container .restaurant-card:hover .card-address > i {
+  color: #FFA803;
+}
+.home-restaurants .restaurant-container .restaurant-card:hover .card-image {
+  transform: scale(1.08);
+}
+.home-restaurants .restaurant-container .restaurant-card * {
+  color: inherit;
+}
+.home-restaurants .restaurant-container .restaurant-card *:hover {
+  text-decoration: none;
+}
+.home-restaurants .restaurant-container .restaurant-card .image-container {
+  height: 200px;
+  overflow: hidden;
+}
 .home-restaurants .restaurant-container .restaurant-card .card-image {
   width: 100%;
-  max-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.9s;
 }
 .home-restaurants .restaurant-container .restaurant-card .card-body {
   position: relative;
@@ -232,10 +253,6 @@
           text-decoration-skip: objects;
   transition: all 0.4s;
 }
-.home-restaurants .restaurant-container .restaurant-card .card-title:hover {
-  -webkit-text-decoration-color: #FFA803;
-          text-decoration-color: #FFA803;
-}
 .home-restaurants .restaurant-container .restaurant-card .card-delivery {
   position: absolute;
   top: -15px;
@@ -250,6 +267,9 @@
 .home-restaurants .restaurant-container .restaurant-card .card-address {
   color: grey;
   margin-bottom: 0.4em;
+}
+.home-restaurants .restaurant-container .restaurant-card .card-address i {
+  transition: all 0.4s;
 }
 .home-restaurants .restaurant-container .restaurant-card .card-text {
   -webkit-line-clamp: 2;
