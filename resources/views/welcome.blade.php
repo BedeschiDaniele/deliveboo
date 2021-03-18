@@ -87,6 +87,7 @@
 						<div class="bottom-card">
 							<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
 						</div>
+						<a :href="'/restaurant/'+restaurant.slug">Dettaglio</a>
 					</div>
 				</div>
 			
@@ -102,6 +103,7 @@
 						<div class="bottom-card">
 							<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
 						</div>
+						<a :href="'/restaurant/'+restaurant.slug">Dettaglio</a>
 					</div>
 				</div>
 			</div>

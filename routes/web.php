@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'RestaurantController@index');
+Route::get('/restaurant/{slug}', 'RestaurantController@show')->name('restaurant');
 
 Auth::routes();
 
