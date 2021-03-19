@@ -16,7 +16,7 @@ class DishController extends Controller
     private $dishValidation = [
         'name' => 'required',
         'img_path' => 'image',
-        'price' => 'required | numeric',
+        'price' => 'required | numeric | min:0',
         'visible' => 'boolean'
     ];
     /**

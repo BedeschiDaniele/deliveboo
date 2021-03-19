@@ -179,6 +179,9 @@
   cursor: pointer;
   box-shadow: 0 0 6px darkgrey;
 }
+.home-categories-carousel .cardActive {
+  box-shadow: 0 0 6px #FFA803;
+}
 .home-categories-carousel .carousel-img {
   width: 60px;
 }

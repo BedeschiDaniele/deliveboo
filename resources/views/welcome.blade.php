@@ -50,7 +50,10 @@
 		<div class="mycontainer">
 			<h2>Scegli la tua categoria preferita</h2>
 			<div class="carousel-container">
-				<div class="category-card" v-for="category in categories">
+				<div @click='setCategory(category)'
+					class="category-card" 
+					:class="selectedCategory== category.name ? 'cardActive' : ''" 
+					v-for="category in categories">
 					<img class="carousel-img" :src="category.img_path" alt="category.name">
 					<span class="carousel-text">@{{ category.name }}</span>
 				</div>
@@ -58,7 +61,7 @@
 		</div>
 	</div>
 
-	<div class="home-categories">
+	{{-- <div class="home-categories">
 		<div class="mycontainer">
 			<select v-model="selectedCategory" name="" id="">
 				<option value="all">Tutti</option>
@@ -66,7 +69,7 @@
 			</select>
 			<button class="home-btn filter-btn" @click='filterCategory'>Trova</button>
 		</div>
-	</div>
+	</div> --}}
 
 	<div class="home-restaurants">
 		<div class="mycontainer">

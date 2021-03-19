@@ -144,6 +144,10 @@ $cardImage: 200px;
       }
     }
 
+    .cardActive {
+      box-shadow: 0 0 6px $brand-orange;
+    }
+
     .carousel-img {
       width: 60px;
     }

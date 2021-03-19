@@ -1891,6 +1891,20 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
           }
         });
       }
+    },
+    setCategory: function setCategory(category) {
+      if (this.selectedCategory == 'all') {
+        this.selectedCategory = category.name;
+        this.filterCategory();
+      } else if (this.selectedCategory != 'all' && this.selectedCategory != category.name) {
+        this.selectedCategory = category.name;
+        this.filterCategory();
+      } else if (this.selectedCategory == category.name) {
+        this.selectedCategory = 'all';
+        this.filterCategory();
+      }
+
+      console.log(this.selectedCategory);
     }
   }
 });
