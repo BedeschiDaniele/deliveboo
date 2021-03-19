@@ -49373,7 +49373,7 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
         total += this.cart[i].item.price * this.cart[i].quantity;
       }
 
-      return total;
+      return total.toFixed(2);
     }
   },
   mounted: function mounted() {

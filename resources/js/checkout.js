@@ -42,7 +42,7 @@ var app = new Vue({
       for (let i = 0; i < this.cart.length; i++) {
         total += this.cart[i].item.price * this.cart[i].quantity;
       }
-      return total;
+      return total.toFixed(2);
     }
   },
   mounted: function(){

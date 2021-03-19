@@ -125,7 +125,8 @@ $cardImage: 200px;
     .carousel-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 10px;
 
       border: 2px solid $homeGrey;
     }

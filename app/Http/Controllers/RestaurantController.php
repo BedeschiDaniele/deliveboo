@@ -21,6 +21,13 @@ class RestaurantController extends Controller
         return view('checkout', compact('restaurant'));
     }
 
+    public function store(Request $request) {
+        $data = $request->all();
+        dd($data);
+        return view('checkout', compact('restaurant'));
+    }
+
+
 
 
 }

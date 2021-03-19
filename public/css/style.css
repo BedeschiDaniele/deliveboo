@@ -164,7 +164,8 @@
 .home-categories-carousel .carousel-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px;
   border: 2px solid rgba(0, 0, 0, 0.03);
 }
 .home-categories-carousel .category-card {
