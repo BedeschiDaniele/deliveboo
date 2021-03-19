@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Dish;
+use App\Order;
 
 class RestaurantController extends Controller
 {
@@ -23,10 +25,23 @@ class RestaurantController extends Controller
 
     public function store(Request $request) {
         $data = $request->all();
-        dd($data);
-        return view('checkout', compact('restaurant'));
+        //dd($data);
+        $newOrder = new Order();
+        $newOrder->fill($data);
+        $newOrder['order_status'] = 'accepted';
+        
+        $newOrder->save();
+        for ($j=0; $j < count($data['quantity']) ; $j++) { 
+            $quantity = $data['quantity'][$j];
+            for ($i=0; $i < $quantity ; $i++) { 
+                $count = 0;
+                $newOrder->dishes()->attach($data['dishes'][$count]);
+            }
+            $count++;
+        }
+        
+      return redirect()->route('welcome');
     }
-
 
 
 

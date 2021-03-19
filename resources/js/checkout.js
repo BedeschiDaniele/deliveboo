@@ -6,7 +6,7 @@ import Vue from 'vue/dist/vue';
 var app = new Vue({
   el: '#checkout',
   data: {
-    cart: []
+    cart: [],
   },
   methods: {
     addToCart: function (dish) {
@@ -43,7 +43,10 @@ var app = new Vue({
         total += this.cart[i].item.price * this.cart[i].quantity;
       }
       return total.toFixed(2);
-    }
+    },
+
+    
+
   },
   mounted: function(){
     if(localStorage.getItem('cart')) {
