@@ -40,9 +40,6 @@ class RestaurantController extends Controller
             $count++;
         }
         
-      return redirect()->route('welcome');
+        return view('success');
     }
-
-
-
 }
