@@ -31,10 +31,10 @@ class RestaurantController extends Controller
         $newOrder['order_status'] = 'accepted';
         
         $newOrder->save();
+        $count = 0;
         for ($j=0; $j < count($data['quantity']) ; $j++) { 
             $quantity = $data['quantity'][$j];
             for ($i=0; $i < $quantity ; $i++) { 
-                $count = 0;
                 $newOrder->dishes()->attach($data['dishes'][$count]);
             }
             $count++;
