@@ -10,6 +10,10 @@
         <link href=" {{ asset('css/app.css')  }} " rel="stylesheet">
         <link href=" {{ asset('css/style.css')  }} " rel="stylesheet">
 
+        <!-- includes the Braintree JS client SDK -->
+        <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
+
+
  </head>
     <body>
       <header>

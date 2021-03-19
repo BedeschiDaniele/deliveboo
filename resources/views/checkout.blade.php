@@ -18,7 +18,11 @@
       <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
       <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
       
-      <button type="submit">Invia ordine</button>
+      <div id="dropin-wrapper">
+        <div id="checkout-message"></div>
+        <div id="dropin-container"></div>
+      </div>
+      <button id="submit-button" type="submit">Invia ordine</button>
     </form>
     <div class="show-cart" v-for='dish in cart'>
       <h3>@{{dish.item.name}}</h3>
@@ -26,7 +30,6 @@
       <span>@{{dish.quantity}}</span>
       <span style="font-size: 30px" @click='increaseQuantity(dish)'>+</span>
     </div>
-    
     <span>@{{calculateTotal}}</span>
   </div>
 </div>
