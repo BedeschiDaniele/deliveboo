@@ -3,26 +3,68 @@
 @section('content')
 <div id="cart">
 
-  <div class="mycontainer">
-    <div class="menu">
-      <h1>Ristorante {{$restaurant->name}}</h1>
+  {{-- Restaurant Jumbotron Section --}}
+  <div class="restaurant-jumbotron" style="background-image: url({{ asset('storage/' . $restaurant->img_path)}})">
+    <div class="overlay"></div>
+		<div class="mycontainer">
+      <div class="jumbotron-text">
+        <h1>{{$restaurant->name}}</h1>
+        <p>Il nostro men&ugrave; <i class="fas fa-chevron-down"></i></p>
+			</div>
+		</div>
+	</div>
+  {{-- /Restaurant Jumbotron Section --}}
+
+  <div class="mycontainer restaurant-container">
+
+    {{-- Menu Section --}}
+    <div class="menu-container">
       @foreach ($restaurant->dishes as $dish)
-          <p>{{$dish->name}}</p>
-          <div>
-            <span @click='addToCart({!! json_encode($dish) !!})'>Aggiungi</span>
+        @if($dish->visible == true)
+          <div class="dish-card">
+              <div class="image-container">
+                <img class="card-image" src="{{asset('storage/' . $dish->img_path)}}" alt="{{$dish->name}}">
+              </div>
+              <div class="card-body">
+                <div class="dish-description">
+                  <h5 class="card-title">{{ $dish->name }}</h5>
+                  <p class="card-text">{{ $dish->description }}</p>
+                </div>
+                <div class="add-dish">
+                  <span @click='addToCart({!! json_encode($dish) !!})'><i class="fas fa-plus"></i></span>
+                  <span class="dish-price">€ {{ number_format($dish->price, 2) }}</span>
+                </div>
+              </div>
           </div>
+        @endif
       @endforeach
     </div>
-    <div class="show-cart" v-for='dish in cart'>
-      <h3>@{{dish.item.name}}</h3>
-      <span style="font-size: 30px" @click='decreaseQuantity(dish)'>-</span>
-      <span>@{{dish.quantity}}</span>
-      <span style="font-size: 30px" @click='increaseQuantity(dish)'>+</span>
+    {{-- /Menu Section --}}
+
+    {{-- Cart Section --}}
+    <div class="cart-container">
+      <div class="checkout-restaurant">
+        <span class="home-btn off-btn" v-if="calculateTotal == 0">Vai alla cassa</span>
+        <a @click='checkout' class="home-btn" v-else href="{{ route('checkout', $restaurant->slug) }}">Vai alla cassa</a>
+      </div>
+      <div class="show-cart" v-for='dish in cart'>
+        {{-- <img :src="'./../storage/' + dish.item.img_path" :alt="dish.item.name"> --}}
+        <span class="quantity-section">
+          <span class="quantity-btn minus-sign" @click='decreaseQuantity(dish)'>-</span>
+          <span class="quantity-number">@{{dish.quantity}}</span>
+          <span class="quantity-btn plus-sign" @click='increaseQuantity(dish)'>+</span>
+        </span>
+        <span class="dish-name">@{{dish.item.name}}</span>
+        <span class="dish-price">€ @{{(dish.item.price * dish.quantity).toFixed(2)}}</span>
+      </div>
+      <span class="empty-cart" v-if="calculateTotal == 0">Il tuo carrello è vuoto</span>
+      <div class="total-cart" v-else>
+        <span>Totale</span>
+        <span class="restaurant-total">€ @{{calculateTotal.toFixed(2)}}</span>
+      </div>
     </div>
-    <span>@{{calculateTotal}}</span>
-    <div>
-      <a @click='checkout' href="{{ route('checkout', $restaurant->slug) }}">Vai al checkout</a>
-    </div>
+    {{-- /Cart Section --}}
+
   </div>
 </div>
 
