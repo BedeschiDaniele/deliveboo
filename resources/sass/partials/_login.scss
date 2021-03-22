@@ -21,6 +21,7 @@
 .btn-orange {
     color: white;
     background-color: #FFA803;
+    
 }
 .btn-orange:hover{
     color: #FFA803;
@@ -32,6 +33,7 @@
     color: #FFA803;
     background-color: white;
     border: 1px solid #FFA803;
+    margin-right:25px;
 }
 .btn-white:hover {
     color: white;
@@ -47,5 +49,12 @@
 }
 
 #return{
-    margin-left:30%;
+    margin-left:10%;
+}
+
+@media screen and (max-width: 767px){
+    .box{
+        border-top: 1px solid #FFA803; 
+        border-left: none;
+     }
 }

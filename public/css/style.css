@@ -548,6 +548,7 @@ footer #copyright span {
   color: #FFA803;
   background-color: white;
   border: 1px solid #FFA803;
+  margin-right: 25px;
 }
 
 .btn-white:hover {
@@ -564,7 +565,14 @@ footer #copyright span {
 }
 
 #return {
-  margin-left: 30%;
+  margin-left: 10%;
+}
+
+@media screen and (max-width: 767px) {
+  .box {
+    border-top: 1px solid #FFA803;
+    border-left: none;
+  }
 }
 
 <<<<<<< HEAD

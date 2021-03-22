@@ -107,29 +107,30 @@
                                 </div>
                             </div>
                         
-                        
+                            <div class="form-group margin">
+                                <div class="text-center">
+                                    @foreach ($categories as $category)         
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" id="category-{{ $category->id }}" name="categories[]" value="{{ $category->id }}">
+                                        <label class="form-check-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="form-group margin">
-                            <div class="text-center">
-                                @foreach ($categories as $category)         
-                                <div class="form-check form-check-inline">
-                                    <input type="checkbox" class="form-check-input" id="category-{{ $category->id }}" name="categories[]" value="{{ $category->id }}">
-                                    <label class="form-check-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
+
                     </div>
             
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-orange">
-                                    {{ __('Registrati') }}
-                                </button>
                                 <button type="submit" class="btn btn-white" id="return">
                                     {{ __('Torna al sito') }}
                                 </button>
+                                <button type="submit" class="btn btn-orange">
+                                    {{ __('Registrati') }}
+                                </button>
+                              
                             </div>
                         </div>
                     </form>
