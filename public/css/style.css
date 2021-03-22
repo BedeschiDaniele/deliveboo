@@ -652,7 +652,7 @@ footer #copyright span {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.restaurant-container {
+.show-restaurant-container {
   display: flex;
   height: 100%;
 }

@@ -15,7 +15,7 @@
  </div>
   {{-- /Restaurant Jumbotron Section --}}
 
-  <div class="mycontainer restaurant-container">
+  <div class="mycontainer show-restaurant-container">
 
     {{-- Menu Section --}}
     <div class="menu-container">
