@@ -61,16 +61,6 @@
 		</div>
 	</div>
 
-	{{-- <div class="home-categories">
-		<div class="mycontainer">
-			<select v-model="selectedCategory" name="" id="">
-				<option value="all">Tutti</option>
-				<option v-for="category in categories" :value="category.name">@{{ category.name }}</option>
-			</select>
-			<button class="home-btn filter-btn" @click='filterCategory'>Trova</button>
-		</div>
-	</div> --}}
-
 	<div class="home-restaurants">
 		<div class="mycontainer">
 			
@@ -100,7 +90,7 @@
 				<div class="restaurant-card" v-if='filteredRestaurant.length > 0 && onSearch==false' v-for="(restaurant,indexRestaurant) in filteredRestaurant">
 					<a :href="'/restaurant/'+restaurant.slug">
 						<div class="image-container">
-							<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
+							<img class="card-image" :src="'Storage/' + restaurant.img_path" :alt="restaurant.name">
 						</div>
 						<div class="card-body">
 							<div class="upper-card">
