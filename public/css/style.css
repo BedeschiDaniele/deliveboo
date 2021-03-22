@@ -291,7 +291,7 @@
 }
 
 footer {
-  background-color: #0A0A0A;
+  background-color: #0E151A;
   color: white;
 }
 footer #footer-top {
@@ -370,12 +370,13 @@ footer #footer-center .mycontainer .inline-ul li {
   margin-right: 8px;
 }
 footer #footer-bottom {
+  height: 80px;
   border-bottom: 1px solid grey;
 }
 footer #footer-bottom .mycontainer {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 25px 0px;
 }
 footer #footer-bottom .mycontainer .inline-ul li {
   display: inline-block;
@@ -392,7 +393,53 @@ footer #footer-bottom .mycontainer .inline-ul li a:hover {
 footer #footer-bottom .mycontainer img {
   height: 45px;
 }
+footer #copyright {
+  padding: 20px;
+  height: 60px;
+  text-align: center;
+}
+footer #copyright span {
+  color: #FFA803;
+}
 
+@media (max-width: 767px) {
+  footer {
+    height: 1200px;
+  }
+  footer #footer-top {
+    padding: 0px 20px;
+  }
+  footer #footer-top input {
+    width: 150px;
+    padding: 0px;
+  }
+  footer #footer-top button {
+    padding: 0px;
+  }
+  footer #footer-center {
+    border-bottom: 0px;
+  }
+  footer #footer-center .mycontainer {
+    padding-top: 20px;
+    text-align: center;
+    flex-direction: column;
+  }
+  footer #footer-center .mycontainer #left {
+    width: 100%;
+    padding: 10px 30px;
+  }
+  footer #footer-center .mycontainer #flex-column {
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+  }
+  footer #footer-center .mycontainer #flex-column div {
+    padding: 20px 0px;
+  }
+  footer #footer-bottom, footer #copyright {
+    display: none;
+  }
+}
 .dashboard-card {
   background-color: #343a40;
 }
@@ -518,4 +565,19 @@ footer #footer-bottom .mycontainer img {
 
 #return {
   margin-left: 30%;
+}
+
+main #success {
+  padding: 30px 0px 60px 0px;
+  background-color: white;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main #success .mycontainer {
+  text-align: center;
+}
+main #success .mycontainer img {
+  margin: 30px 0px;
+  height: 200px;
 }

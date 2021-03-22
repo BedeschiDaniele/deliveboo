@@ -38,12 +38,12 @@
             <div>
             <h4>Business</h4>
                 <ul>
-                <li><a href="">Add a restaurant</a></li>
-                <li><a href="">Buniess Order Guidelines</a></li>
-                <li><a href="">Orders</a></li>
-                <li><a href="">Book</a></li>
-                <li><a href="">Trace</a></li>
-                <li><a href="">Advertise</a></li>
+                    <li><a href="">Add a restaurant</a></li>
+                    <li><a href="">Buniess Order Guidelines</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="">Book</a></li>
+                    <li><a href="">Trace</a></li>
+                    <li><a href="">Advertise</a></li>
                 </ul>
             </div>
             <div>
@@ -72,6 +72,11 @@
                 <li><a href="">Sitemap</a></li>
             </ul>
         </div>
+    </div>
+</div>
+<div id="copyright">
+    <div class="mycontainer">
+        <p>© Copyright 2021 <span>Deliveboo</span> by Boolean Team 6. All Rights Reserved.</p>
     </div>
 </div>
 
