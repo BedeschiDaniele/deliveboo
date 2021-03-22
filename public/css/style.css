@@ -858,57 +858,12 @@ main #success .mycontainer img {
   height: 200px;
 }
 
-.restaurant-jumbotron {
-  position: relative;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-attachment: center;
-  background-position: center;
-  background-size: cover;
-  background-color: black;
-  z-index: 1;
+#checkout .mycontainer {
+  padding: 20px 0 35px;
 }
-.restaurant-jumbotron:before {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  background: linear-gradient(35deg, #0a0a0a 20%, transparent 100%);
-}
-.restaurant-jumbotron h1 {
-  color: white;
-  -webkit-text-decoration: #FFA803 solid overline;
-          text-decoration: #FFA803 solid overline;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.restaurant-jumbotron p {
-  color: white;
-  font-size: 35px;
-  font-family: "Great Vibes", cursive;
-}
-.restaurant-jumbotron p i {
-  margin-left: 7px;
-  font-size: 18px;
-}
-.restaurant-jumbotron .mycontainer {
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-}
-.restaurant-jumbotron .overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+#checkout .home-btn:hover {
+  color: #FFA803;
+  background-color: white;
 }
 
 label {
@@ -965,37 +920,26 @@ label {
   padding: 5px 10px;
   border-radius: 10px;
 }
-.wrapper .shopping-cart {
-  padding: 25px;
+.wrapper .checkout-cart {
+  width: 35%;
+  position: relative;
+  padding: 0 0 10px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
-.wrapper .shopping-cart i {
-  color: #23CAD3;
-}
-.wrapper .shopping-cart h2 {
+.wrapper .checkout-cart .cart-top {
+  width: 100%;
   text-align: center;
-  color: #FFA803;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #FFA803;
 }
-.wrapper .shopping-cart .show-cart {
-  display: flex;
-  line-height: 70px;
-}
-.wrapper .shopping-cart .show-cart span {
-  margin-right: 5px;
-}
-.wrapper .shopping-cart .show-cart img {
-  vertical-align: middle;
-  border-style: none;
-  width: 100px;
-  height: 70px;
+.wrapper .checkout-cart .dish-price {
   display: inline-block;
-  margin-bottom: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-right: 15px;
-}
-.wrapper .shopping-cart #total {
-  font-size: 18px;
+  width: 20%;
+  text-align: right;
 }

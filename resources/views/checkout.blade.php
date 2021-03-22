@@ -33,10 +33,6 @@
               <label class="label">Nome Cognome</label>
               <input type="text" name="customer_name" placeholder="Inserisci il tuo nome">
             </div>
-            {{-- <div class="user-surname">
-              <label class="label">Cognome</label>
-              <input type="text" name="customer_surname" placeholder="Inserisci il tuo cognome">
-            </div> --}}
           </div>
           <div class="email-telephone">
             <div class="user-email">
@@ -55,28 +51,24 @@
           <label class="label">Note</label>
           <textarea name="notes" rows="6"></textarea>
         </div>
+
         {{-- Carrello --}}
-        <div class="shopping-cart">
-          <h2>Carrello<i class="fas fa-shopping-cart"></i></h2>
+        <div class="cart-container checkout-cart">
+          <div class="cart-top">Il tuo carrello</div>
           <div class="show-cart" v-for='dish in cart'>
-            <div>
-              <span @click='decreaseQuantity(dish)'><i class="far fa-minus-square"></i></span>
-            </div>
-            <div>
-              <span>@{{dish.quantity}}</span>
-            </div>
-            <div>
-              <span @click='increaseQuantity(dish)'><i class="far fa-plus-square"></i></span>
-            </div>
-            <div>
-              <img class="" :src="'../../storage/' + dish.item.img_path" :alt="dish.item.name">
-            </div>
-            <div>
-              <span>@{{dish.item.name}}</span>
-              <span>@{{dish.item.price}}&euro;</span>
-            </div>
-           </div>
-          <span id="total"><strong>Totale ordine:</strong> @{{calculateTotal}}&euro;</span>
+            <span class="quantity-section">
+              <span class="quantity-btn minus-sign" @click='decreaseQuantity(dish)'>-</span>
+              <span class="quantity-number">@{{dish.quantity}}</span>
+              <span class="quantity-btn plus-sign" @click='increaseQuantity(dish)'>+</span>
+            </span>
+            <span class="dish-name">@{{dish.item.name}}</span>
+            <span class="dish-price">€ @{{(dish.item.price * dish.quantity).toFixed(2)}}</span>
+          </div>
+
+          <div class="total-cart">
+            <span>Totale</span>
+            <span class="restaurant-total">€ @{{calculateTotal}}</span>
+          </div>
         </div>
 
 
@@ -88,7 +80,7 @@
       <div id="dropin-wrapper">
         <div id="checkout-message"></div>
         <div id="dropin-container"></div>
-        <button id="submit-button">Submit payment</button>
+        <button class="home-btn" id="submit-button">Submit payment</button>
       </div>
     </form>
   </div>

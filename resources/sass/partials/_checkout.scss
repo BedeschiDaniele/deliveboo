@@ -1,62 +1,15 @@
-.restaurant-jumbotron {
-  position: relative;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-attachment: center;
-  background-position: center;
-  background-size: cover;
-  background-color: black;
-  z-index: 1;
+#checkout {
+  .mycontainer {
+    padding: 20px 0 35px;
+  }
 
-  &:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: linear-gradient(35deg, rgba(10,10,10,1 ) 20%,transparent 100%);
-  }
-  
-  h1 {
-    color: white;
-    text-decoration: $brand-orange solid overline;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  p {
-    color: white;
-    font-size: 35px;
-    font-family: 'Great Vibes', cursive;
-    i {
-      margin-left: 7px;
-      font-size: 18px;
+  .home-btn {
+    &:hover {
+      color: $brand-orange;
+      background-color: white;
     }
   }
-
-  .mycontainer {
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%; 
-  }
-  
-  .overlay {
-    display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 }
-
-
-
-
 
 label {
   font-size: 16px;
@@ -113,37 +66,29 @@ label {
     }
   }
 
-  .shopping-cart {
-    padding: 25px;
+  .checkout-cart {
+    width: 35%;
+    position: relative;
+    padding: 0 0 10px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px 5px rgb(0 0 0 / 10%);
-    i {
-      color: $brand-heavenly;
-    }
-    h2 {
+    overflow: hidden;
+
+    .cart-top {
+      width: 100%;
       text-align: center;
-      color: $brand-orange;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      padding: 15px;
+      font-size: 15px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: $brand-orange;
     }
-    .show-cart {
-      display: flex;
-      line-height: 70px;
-      span {
-        margin-right: 5px;
-      }
-      img {
-        vertical-align: middle;
-        border-style: none;
-        width: 100px;
-        height: 70px;
-        display: inline-block;
-        margin-bottom: 20px;
-        object-fit: cover;
-        margin-right: 15px;
-      }
-    }
-    #total {
-      font-size: 18px;
+
+    .dish-price {
+      display: inline-block;
+      width: 20%;
+      text-align: right;
     }
   }
   

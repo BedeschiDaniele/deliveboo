@@ -124,9 +124,9 @@
             
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-white" id="return">
+                                <a href="{{ url('/') }}" class="btn btn-white" id="return">
                                     {{ __('Torna al sito') }}
-                                </button>
+                                </a>
                                 <button type="submit" class="btn btn-orange">
                                     {{ __('Registrati') }}
                                 </button>
