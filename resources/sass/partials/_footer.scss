@@ -1,5 +1,5 @@
 footer {
-    background-color:#0A0A0A;
+    background-color:#0E151A;
     color: white;
     #footer-top{
         height: 120px;
@@ -79,11 +79,12 @@ footer {
         }  
     }
     #footer-bottom {
+        height: 80px;
         border-bottom:1px solid grey;
         .mycontainer{
             display: flex;
             justify-content: space-between;
-            padding: 20px 0px;
+            padding: 25px 0px;
             .inline-ul li {
                 display: inline-block;
                 margin-right: 10px;
@@ -93,13 +94,59 @@ footer {
                     transition: 0.2s;
                     &:hover {
                         color:$brand-orange;
-
                     }
                 }
             }
             img {
                 height: 45px;
             }
+        }
+    }
+    #copyright {
+        padding: 20px;
+        height: 60px;
+        text-align: center;
+        span {
+            color:$brand-orange;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    footer{
+        height: 1200px;
+        #footer-top{
+            padding: 0px 20px;
+            input {
+                width: 150px;
+                padding: 0px;
+            }
+            button {
+                padding: 0px;
+            }
+        }   
+        #footer-center {   
+            border-bottom: 0px;
+            .mycontainer{
+                padding-top: 20px;      
+                text-align: center;
+                flex-direction: column;
+                #left{      
+                    width: 100%;  
+                    padding: 10px 30px;           
+                }               
+                #flex-column  {
+                    flex-direction: column;
+                    width: 100%;
+                    margin: 0px;
+                    div {
+                        padding:20px 0px;
+                    }
+                }
+            }
+        }
+        #footer-bottom, #copyright{
+            display:none;
         }
     }
 }
