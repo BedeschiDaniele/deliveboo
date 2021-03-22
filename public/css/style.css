@@ -196,13 +196,9 @@
 }
 .home-restaurants .restaurant-container {
   text-align: left;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 20px;
 }
 .home-restaurants .restaurant-container .restaurant-card {
-  max-width: 32%;
   height: 380px;
   margin: 15px 0;
   border-radius: 4px;

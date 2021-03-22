@@ -166,13 +166,13 @@ $cardImage: 200px;
 
   .restaurant-container {
     text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
     margin-top: 20px;
     
     .restaurant-card {
-        max-width: 32%;
+        // max-width: 32%;
         height: $cardHeight;
         margin: 15px 0;
         border-radius: 4px;

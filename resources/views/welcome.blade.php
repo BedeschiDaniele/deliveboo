@@ -68,42 +68,54 @@
 			<h2 v-if='onSearch==true'>Non ci sono ristoranti</h2>
 
 			<div class="restaurant-container">
-				<div class="restaurant-card" v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false' v-for="(restaurant,indexRestaurant) in restaurants">
-					<a :href="'/restaurant/'+restaurant.slug">
-						<div class="image-container">
-							<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
+				<div class="row">
+					{{-- Tutti i ristoranti --}}
+					<div class="col-12 col-md-6 col-lg-4" 
+					v-for="(restaurant,indexRestaurant) in restaurants" 
+					v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false'>
+						<div class="restaurant-card">
+							<a :href="'/restaurant/'+restaurant.slug">
+								<div class="image-container">
+									<img class="card-image" :src="'Storage/' + restaurant.img_path" alt="restaurant.name">
+								</div>
+								<div class="card-body">
+									<div class="upper-card">
+										<h5 class="card-title">@{{ restaurant.name }}</h5>
+										<span class="card-delivery">CONSEGNA GRATIS</span>
+										<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
+										<p class="card-text">@{{ restaurant.description }}</p>
+									</div>
+									<div class="bottom-card">
+										<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+									</div>
+								</div>
+							</a>
 						</div>
-						<div class="card-body">
-							<div class="upper-card">
-								<h5 class="card-title">@{{ restaurant.name }}</h5>
-								<span class="card-delivery">CONSEGNA GRATIS</span>
-								<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
-								<p class="card-text">@{{ restaurant.description }}</p>
-							</div>
-							<div class="bottom-card">
-								<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
-							</div>
+					</div>
+
+					{{-- Tutti i ristoranti filtrati --}}
+					<div class="col-12 col-md-6 col-lg-4"
+						v-if='filteredRestaurant.length > 0 && onSearch==false' 
+						v-for="(restaurant,indexRestaurant) in filteredRestaurant">
+						<div class="restaurant-card"  >
+							<a :href="'/restaurant/'+restaurant.slug">
+								<div class="image-container">
+									<img class="card-image" :src="'Storage/' + restaurant.img_path" :alt="restaurant.name">
+								</div>
+								<div class="card-body">
+									<div class="upper-card">
+										<h5 class="card-title">@{{ restaurant.name }}</h5>
+										<span class="card-delivery">CONSEGNA GRATIS</span>
+										<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
+										<p class="card-text">@{{ restaurant.description }}</p>
+									</div>
+									<div class="bottom-card">
+										<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
+									</div>
+								</div>
+							</a>
 						</div>
-					</a>
-				</div>
-			
-				<div class="restaurant-card" v-if='filteredRestaurant.length > 0 && onSearch==false' v-for="(restaurant,indexRestaurant) in filteredRestaurant">
-					<a :href="'/restaurant/'+restaurant.slug">
-						<div class="image-container">
-							<img class="card-image" :src="'Storage/' + restaurant.img_path" :alt="restaurant.name">
-						</div>
-						<div class="card-body">
-							<div class="upper-card">
-								<h5 class="card-title">@{{ restaurant.name }}</h5>
-								<span class="card-delivery">CONSEGNA GRATIS</span>
-								<p class="card-address"><i class="fas fa-map-marker-alt"></i> @{{ restaurant.address }}</p>
-								<p class="card-text">@{{ restaurant.description }}</p>
-							</div>
-							<div class="bottom-card">
-								<span class="category-tags" v-for="category in restaurant.categories">&#9679; @{{ category.name }} </span>
-							</div>
-						</div>
-					</a>
+					</div>
 				</div>
 			</div>
 		</div>
