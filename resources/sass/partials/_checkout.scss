@@ -1,0 +1,153 @@
+.restaurant-jumbotron {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  background-color: black;
+  background-position-x: right;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: 85% auto;
+  background-attachment: fixed;
+  z-index: 1;
+
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(35deg, rgba(10,10,10,1 ) 30%,rgba(0,0,0,0) 100%);
+}
+  
+  h1 {
+    color: white;
+    text-decoration: $brand-orange solid overline;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  p {
+    color: white;
+    font-size: 35px;
+    font-family: 'Great Vibes', cursive;
+    i {
+      margin-left: 7px;
+      font-size: 18px;
+    }
+  }
+
+  .mycontainer {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%; 
+  }
+  
+  .overlay {
+    display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+
+
+
+label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: flex-start;
+  .card-user {
+    padding: 25px;
+    background: url("/img/home/cattura.png") center center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px 5px rgb(0 0 0 / 10%);
+  
+    input {
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 50px;
+      border: #666;
+      border-radius: 10px;
+      color: #666;
+      background: #fafafa;
+      outline: none;
+      margin: 0;
+    }
+    .name-surname {
+      display: flex;
+      margin-top: 30px;
+      .user-name{
+        margin-right: 30px;
+      } 
+    }
+    .email-telephone {
+      display: flex;
+      margin-top: 20px;
+      .user-email{
+        margin-right: 30px;
+      } 
+    }
+    .user-address {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  }
+
+  .shopping-cart {
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px 5px rgb(0 0 0 / 10%);
+    i {
+      color: $brand-heavenly;
+    }
+    h2 {
+      text-align: center;
+      color: $brand-orange;
+      margin-bottom: 15px;
+    }
+    .show-cart {
+      display: flex;
+      line-height: 70px;
+      span {
+        margin-right: 5px;
+      }
+      img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100px;
+        height: 70px;
+        display: inline-block;
+        margin-bottom: 20px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+    }
+    #total {
+      font-size: 18px;
+    }
+  }
+  
+}
+
+// Braintree
+
