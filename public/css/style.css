@@ -393,11 +393,13 @@ footer #footer-bottom .mycontainer img {
   height: 45px;
 }
 
-.dashboard-card {
-  background-color: #343a40;
+#dashboard-body {
+  color: #fff;
+  background-color: #2a2d32;
 }
 
 .dashboard-btn {
+  color: #fff;
   background-color: #FFA803;
   border: 1px solid #FFA803;
 }
@@ -406,64 +408,91 @@ footer #footer-bottom .mycontainer img {
   border: 1px solid #FFA803;
 }
 
-#dashboard-cards {
-  display: flex;
-  justify-content: center;
+.dashboard-btn-back {
+  color: #fff;
+  background-color: #23CAD3;
+  border: 1px solid #23CAD3;
 }
-#dashboard-cards .card {
-  width: calc(30%);
-  margin: 50px;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #343a40;
-}
-#dashboard-cards .card img {
-  padding: 20px;
+.dashboard-btn-back:hover {
+  color: #fff;
+  background-color: #1fb5bd;
+  border: 1px solid #23CAD3;
 }
 
-#dashboard-dishes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.dashboard-card {
+  position: relative;
+}
+.dashboard-card .fas {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.card-black {
+  margin-bottom: 30px;
   color: #fff;
-}
-#dashboard-dishes .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 200px;
-  margin: 20px;
-  border-radius: 10px;
-  overflow: hidden;
   background-color: #343a40;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-#dashboard-dishes .card .card-body {
-  flex: none;
-}
-#dashboard-dishes .card img {
-  width: 100%;
+.card-black img {
   -o-object-fit: cover;
      object-fit: cover;
-  padding: 20px;
-}
-
-.table-index img {
-  max-width: 150px;
 }
 
 .table-show img {
   max-width: 300px;
 }
 
-@media screen and (max-width: 768px) {
-  #dashboard-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.destroy-form {
+  display: inline-block;
+}
+.destroy-form button {
+  margin-top: 0 !important;
+  margin-left: 15px;
+}
+
+.edit-form input,
+.edit-form textarea {
+  color: #fff;
+  background-color: #343a40;
+}
+.edit-form :focus {
+  color: #fff;
+  background-color: #343a40;
+}
+
+@media screen and (max-width: 575px) {
+  .card-black h5 {
+    font-size: 20px;
   }
-  #dashboard-cards .card {
-    width: calc(100% / 2);
-    margin: 50px;
+  .card-black img {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .card-black h5 {
+    font-size: 14px;
+  }
+  .card-black img {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-black h5 {
+    font-size: 20px;
+  }
+  .card-black img {
+    height: 250px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card-black img {
+    height: 275px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-black img {
+    height: 300px;
   }
 }
 .space {

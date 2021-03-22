@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="text-center">Modifica {{ $dish->name }}</h1>
     <div class="clearfix my-4">
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary mb-4">Torna all'elenco piatti</a>
+        <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn dashboard-btn-back mb-4">Torna al piatto</a>
       </div>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -15,7 +15,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route("admin.dishes.update" , $dish->id ) }}" method="POST" enctype="multipart/form-data">
+    <form class="edit-form" action="{{ route("admin.dishes.update" , $dish->id ) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -37,13 +37,14 @@
                 value="{{ $dish->price }}">
         </div>
 
-        <div class="form-group">
-            @if(!empty($dish->img_path))
-            <img class="d-block" src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}"
-                style="max-width: 300px">
-            @endif
-            <label for="img_path" class="col-form-label mt-4">{{ __('Carica nuova immagine') }}</label>
-            <input id="img_path" type="file" name="img_path" accept="image/*">
+        <div class="form-group" style="margin-left: -15px; margin-right: -15px;">
+            <div class=" col-12 col-md-6 col-lg-4">
+                @if(!empty($dish->img_path))
+                    <img class="img-fluid" src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}">
+                @endif
+                <label for="img_path" class="col-form-label mt-4">{{ __('Carica nuova immagine') }}</label>
+                <input id="img_path" type="file" name="img_path" accept="image/*">
+            </div>    
         </div>
 
         <div class="form-group">

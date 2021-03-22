@@ -1,60 +1,52 @@
-.dashboard-card {
-    background-color: #343a40;
+#dashboard-body {
+    color: #fff;
+    background-color: #2a2d32;
+    // background-color: #212429;
 }
+
 .dashboard-btn {
+    color: #fff;
     background-color: $brand-orange;
     border: 1px solid $brand-orange;
     &:hover {
         background-color: darken($brand-orange, 5%);
         border: 1px solid $brand-orange;
     }
-}
-
-#dashboard-cards {
-    display: flex;
-    justify-content: center;
-    .card {
-        width: calc(30%);
-        margin: 50px;
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #343a40;
-        img {
-            padding: 20px;
-        }
-    }
-}
-
-#dashboard-dishes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+}.dashboard-btn-back {
     color: #fff;
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 200px;
-        margin: 20px;
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #343a40;
-        .card-body {
-            flex: none;
-        }
-        img {
-            width: 100%;
-            object-fit: cover;
-            padding: 20px;
-        }
+    background-color: $brand-heavenly;
+    border: 1px solid $brand-heavenly;
+    &:hover {
+        color: #fff;
+        background-color: darken($brand-heavenly, 5%);
+        border: 1px solid $brand-heavenly;
     }
 }
 
-.table-index {
-    img {
-        max-width: 150px;
+.dashboard-card {
+    position: relative;
+    .fas {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
     }
 }
+
+.card-black {
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #343a40;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    img {
+        object-fit: cover;
+    }
+}
+
+// .table-index {
+//     img {
+//         max-width: 150px;
+//     }
+// }
 
 .table-show {
     img {
@@ -62,14 +54,73 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    #dashboard-cards {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        .card {
-            width: calc(100% / 2);
-            margin: 50px;
+.destroy-form {
+    display: inline-block;
+    button {
+        margin-top: 0 !important;
+        margin-left: 15px;
+    }
+}
+
+.edit-form {
+    input,
+    textarea {
+        color: #fff;
+        background-color: #343a40;
+        
+    }
+    :focus {
+        color: #fff;
+        background-color: #343a40;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+    .card-black {
+        h5 {
+            font-size: 20px;
+        }
+        img {
+            height: 350px;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .card-black {
+        h5 {
+            font-size: 14px;
+        }
+        img {
+            height: 200px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-black {
+        h5 {
+            font-size: 20px;
+        }
+        img {
+            height: 250px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-black {
+        img {
+            height: 275px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card-black {
+        img {
+            height: 300px;
         }
     }
 }

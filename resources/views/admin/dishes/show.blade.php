@@ -5,9 +5,14 @@
 <div class="container">
     <h1 class="text-center">{{ $dish->name }}</h1>
     <div class="clearfix my-4">
-      <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary mb-4">Torna all'elenco piatti</a>
+      <a href="{{ route('admin.dishes.index') }}" class="btn dashboard-btn-back mb-4">Torna all'elenco piatti</a>
     </div>
 
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            <img class="img-fluid" src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}">
+        </div>
+    </div>
     <table class="table table-striped table-bordered table-dark table-show my-4">
         <tr>
             <td><strong>ID</strong></td>
@@ -17,12 +22,12 @@
             <td><strong>Nome del piatto</strong></td>
             <td>{{ $dish->name }}</td>
         </tr>
-        <tr>
+        {{-- <tr>
             <td><strong>Immagine</strong></td>
             <td>
                 <img src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}">
             </td>
-        </tr>
+        </tr> --}}
         <tr>
             <td><strong>Prezzo</strong></td>
             <td>{{ $dish->price }} €</td>
@@ -42,5 +47,14 @@
             </td>
         </tr>
     </table>
+    <div class="clearfix mt-4">
+        <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-success">Modifica</a>
+        <form class="destroy-form" action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST"
+            onsubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-danger mt-2">Elimina</button>
+        </form>
+    </div>
 </div>
 @endsection
