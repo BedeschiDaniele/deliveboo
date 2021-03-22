@@ -15,12 +15,12 @@
 <div id="checkout">
   <div class="restaurant-jumbotron" style="background-image: url({{ asset('storage/' . $restaurant->img_path)}})">
     <div class="overlay"></div>
-		<div class="mycontainer">
+  <div class="mycontainer">
       <div class="jumbotron-text">
         <h1>{{$restaurant->name}}</h1>
-			</div>
-		</div>
-	</div>
+      </div>
+  </div>
+ </div>
   <div class="mycontainer">
     <form action="{{ route('store', $restaurant->slug) }}" method="POST">
       @method('POST')
@@ -30,13 +30,13 @@
           <h2>Dati Utente</h2>
           <div class="name-surname">
             <div class="user-name">
-              <label class="label">Nome</label>
+              <label class="label">Nome Cognome</label>
               <input type="text" name="customer_name" placeholder="Inserisci il tuo nome">
             </div>
-            <div class="user-surname">
+            {{-- <div class="user-surname">
               <label class="label">Cognome</label>
               <input type="text" name="customer_surname" placeholder="Inserisci il tuo cognome">
-            </div>
+            </div> --}}
           </div>
           <div class="email-telephone">
             <div class="user-email">

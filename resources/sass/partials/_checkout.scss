@@ -1,13 +1,11 @@
 .restaurant-jumbotron {
   position: relative;
   height: 400px;
-  overflow: hidden;
-  background-color: black;
-  background-position-x: right;
-  background-position-y: top;
   background-repeat: no-repeat;
-  background-size: 85% auto;
-  background-attachment: fixed;
+  background-attachment: center;
+  background-position: center;
+  background-size: cover;
+  background-color: black;
   z-index: 1;
 
   &:before {
@@ -18,8 +16,8 @@
     z-index: -1;
     top: 0;
     left: 0;
-    background: linear-gradient(35deg, rgba(10,10,10,1 ) 30%,rgba(0,0,0,0) 100%);
-}
+    background: linear-gradient(35deg, rgba(10,10,10,1 ) 20%,transparent 100%);
+  }
   
   h1 {
     color: white;
@@ -78,6 +76,7 @@ label {
     box-shadow: 0 10px 30px 5px rgb(0 0 0 / 10%);
   
     input {
+      width: 100%;
       padding: 0 20px;
       font-size: 16px;
       line-height: 50px;
@@ -92,7 +91,7 @@ label {
       display: flex;
       margin-top: 30px;
       .user-name{
-        margin-right: 30px;
+        width: 100%;
       } 
     }
     .email-telephone {
@@ -103,6 +102,7 @@ label {
       } 
     }
     .user-address {
+      width: 100%;
       margin-top: 20px;
       margin-bottom: 20px;
     }

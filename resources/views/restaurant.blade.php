@@ -6,13 +6,13 @@
   {{-- Restaurant Jumbotron Section --}}
   <div class="restaurant-jumbotron" style="background-image: url({{ asset('storage/' . $restaurant->img_path)}})">
     <div class="overlay"></div>
-		<div class="mycontainer">
+  <div class="mycontainer">
       <div class="jumbotron-text">
         <h1>{{$restaurant->name}}</h1>
         <p>Il nostro men&ugrave; <i class="fas fa-chevron-down"></i></p>
-			</div>
-		</div>
-	</div>
+       </div>
+  </div>
+ </div>
   {{-- /Restaurant Jumbotron Section --}}
 
   <div class="mycontainer restaurant-container">
