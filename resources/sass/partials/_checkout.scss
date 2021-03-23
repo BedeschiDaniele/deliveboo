@@ -10,6 +10,14 @@
     }
   }
 }
+.off-btn {
+  background-color: lighten($brand-orange, 20%);
+  border-color: lighten($brand-orange, 20%);
+  &:hover {
+    background-color: lighten($brand-orange, 20%);
+    box-shadow: none;
+  }
+}
 
 label {
   font-size: 16px;

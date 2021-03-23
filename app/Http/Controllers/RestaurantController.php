@@ -9,6 +9,15 @@ use App\Order;
 
 class RestaurantController extends Controller
 {
+    private $formValidation = [
+        'customer_name' => 'required | max: 60',
+        'customer_address' => 'required | max: 80',
+        'customer_phone' => 'required | max: 15',
+        // 'credit-card-number' => 'required | numeric | max: 16',
+        // 'expiration-month' => 'required | numeric',
+        // 'expiration-year' => 'required | numeric'
+    ];
+
     public function index() {
         return view('welcome');
     }
@@ -25,6 +34,7 @@ class RestaurantController extends Controller
 
     public function store(Request $request) {
         $data = $request->all();
+        $request->validate($this->formValidation);
         //dd($data);
         $newOrder = new Order();
         $newOrder->fill($data);

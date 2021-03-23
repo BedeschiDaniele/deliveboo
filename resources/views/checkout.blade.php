@@ -22,6 +22,15 @@
   </div>
  </div>
   <div class="mycontainer">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="{{ route('store', $restaurant->slug) }}" method="POST">
       @method('POST')
       @csrf
@@ -31,25 +40,25 @@
           <div class="name-surname">
             <div class="user-name">
               <label class="label">Nome Cognome</label>
-              <input type="text" name="customer_name" placeholder="Inserisci il tuo nome">
+              <input type="text" name="customer_name" placeholder="Inserisci nome e cognome" value="{{ old('customer_name') }}">
             </div>
           </div>
           <div class="email-telephone">
             <div class="user-email">
               <label class="label">Email</label>
-              <input type="text" name="customer_email" placeholder="Inserisci una email">
+              <input type="text" name="customer_email" placeholder="Inserisci una email" value="{{ old('customer_email') }}">
             </div>
             <div class="user-telephone">
               <label class="label">Telefono</label>
-              <input type="text" name="customer_phone" placeholder="Inserisci un numero di telefono">
+              <input type="text" name="customer_phone" placeholder="Inserisci un numero di telefono" value="{{ old('customer_phone') }}">
             </div>
           </div>
           <div class="user-address">
             <label class="label">Indirizzo</label>
-            <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo">
+            <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo" value="{{ old('customer_address') }}">
           </div>
           <label class="label">Note</label>
-          <textarea name="notes" rows="6"></textarea>
+          <textarea name="notes" rows="6">{{ old('notes') }}</textarea>
         </div>
 
         {{-- Carrello --}}
@@ -80,7 +89,11 @@
       <div id="dropin-wrapper">
         <div id="checkout-message"></div>
         <div id="dropin-container"></div>
-        <button class="home-btn" id="submit-button">Submit payment</button>
+        <div class="clearfix">
+          <a class="home-btn float-left" href="{{ route('restaurant', $restaurant->slug) }}" @click='saveLocalStorage'>Torna indietro</a>
+          <span class="home-btn off-btn float-right" v-if="calculateTotal == 0">Procedi al pagamento</span>
+          <button class="home-btn float-right" v-else id="submit-button">Procedi al pagamento</button>
+        </div>
       </div>
     </form>
   </div>

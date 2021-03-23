@@ -866,6 +866,15 @@ main #success .mycontainer img {
   background-color: white;
 }
 
+.off-btn {
+  background-color: #ffcb69;
+  border-color: #ffcb69;
+}
+.off-btn:hover {
+  background-color: #ffcb69;
+  box-shadow: none;
+}
+
 label {
   font-size: 16px;
   display: block;

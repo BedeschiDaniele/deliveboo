@@ -13,7 +13,9 @@ var app = new Vue({
     onSearch: false
   },
   mounted: function() {
-    
+
+      localStorage.clear();
+      
     axios
     .get('http://127.0.0.1:8000/api/restaurants')
     .then((response) => {
@@ -64,6 +66,5 @@ var app = new Vue({
       }
       console.log(this.selectedCategory);
     }
-
   }
 })

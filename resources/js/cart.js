@@ -49,4 +49,13 @@ var app = new Vue({
       return total;
     }
   },
+  mounted: function() {
+    if(localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch(e) {
+        localStorage.removeItem('cart');
+      }
+    }
+  }
 })

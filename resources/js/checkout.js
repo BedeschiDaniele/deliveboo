@@ -34,6 +34,10 @@ var app = new Vue({
     removeProdFromCart(dish) {
       const prodIndex = this.cart.indexOf(dish);
       this.cart.splice(prodIndex, 1);
+    },
+    saveLocalStorage() {
+      let parsed = JSON.stringify(this.cart);
+      localStorage.setItem('cart', parsed);
     }
   },
   computed: {

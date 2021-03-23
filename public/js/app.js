@@ -1862,6 +1862,7 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
   mounted: function mounted() {
     var _this = this;
 
+    localStorage.clear();
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
       _this.onSearch = false;
       _this.restaurants = response.data;
