@@ -15,7 +15,7 @@
                 <div class="card card-black">
                     <img class="card-img-top" src="{{ asset('img/dashboard/cart.jpg') }}" alt="Piatti">
                     <div class="card-body">
-                        <a class="btn btn-lg btn-primary dashboard-btn" href="#">Ordini</a>
+                        <a class="btn btn-lg btn-primary dashboard-btn" href="{{ route('admin.stats') }}">Ordini</a>
                     </div>
                 </div>
             </div>         

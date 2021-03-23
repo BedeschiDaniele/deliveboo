@@ -31,6 +31,7 @@ Route::prefix('admin') // prefisso rotte
 
         Route::resource('dishes', 'DishController');
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('dashboard/stats', 'DashboardController@stats')->name('stats');
 
     }
 );
