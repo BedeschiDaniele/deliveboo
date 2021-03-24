@@ -8,6 +8,9 @@ use App\Dish;
 use App\Order;
 use Braintree;
 
+use App\Mail\RestaurantMail;
+use Illuminate\Support\Facades\Mail;
+
 
 class RestaurantController extends Controller
 {
@@ -85,6 +88,7 @@ class RestaurantController extends Controller
             
         if ($result->success) {
             $transaction = $result->transaction;
+            Mail::to('customer@mail.it')->send(new RestaurantMail($newOrder));
             return view('success');
         } else {
             $errorString = "";
