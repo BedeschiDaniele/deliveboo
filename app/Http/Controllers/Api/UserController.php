@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Category;
+use App\Order;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -42,5 +43,26 @@ class UserController extends Controller
          };
 
         return response()->json($restaurants);
+    }
+
+    public function getOrders($slug) {
+
+        $restaurant = User::where('slug', $slug)->firstOrFail();
+        $allOrders = Order::all();
+        $orders = [];
+    
+        foreach ($allOrders as $order) {
+            
+          foreach ($order->dishes as $dish) {
+    
+            if ($dish->user_id === $restaurant->id && !in_array($order, $orders)) {
+              
+                $orders[] = $order;
+    
+            }
+          }
+        }
+    
+        return response()->json($orders);
     }
 }

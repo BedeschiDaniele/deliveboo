@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/cart.js', 'public/js')
     .js('resources/js/checkout.js', 'public/js')
+    .js('resources/js/stats.js', 'public/js')
     .vue({ version: 2 })
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/style.scss', 'public/css')
