@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Dish;
 use App\Order;
+use Braintree;
+
 
 class RestaurantController extends Controller
 {
@@ -13,12 +15,10 @@ class RestaurantController extends Controller
         'customer_name' => 'required | max: 60',
         'customer_address' => 'required | max: 80',
         'customer_phone' => 'required | max: 15',
-        // 'credit-card-number' => 'required | numeric | max: 16',
-        // 'expiration-month' => 'required | numeric',
-        // 'expiration-year' => 'required | numeric'
     ];
 
     public function index() {
+
         return view('welcome');
     }
 
@@ -28,17 +28,34 @@ class RestaurantController extends Controller
     }
 
     public function checkout($slug) {
+        $gateway = new \Braintree\Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'fdwwwgk9c98rpnmx',
+            'publicKey' => 'rjq46pcqt9hnsxk7',
+            'privateKey' => '3268625269af69822cf891dd65c46fef'
+        ]);
+    
+        $token = $gateway->ClientToken()->generate();
         $restaurant = User::where('slug',$slug)->firstOrFail();
-        return view('checkout', compact('restaurant'));
+        return view('checkout', compact('restaurant', 'token'));
     }
 
     public function store(Request $request) {
         $data = $request->all();
         $request->validate($this->formValidation);
-        //dd($data);
+   
         $newOrder = new Order();
         $newOrder->fill($data);
         $newOrder['order_status'] = 'accepted';
+        
+        //Braintree
+        $gateway = new \Braintree\Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'fdwwwgk9c98rpnmx',
+            'publicKey' => 'rjq46pcqt9hnsxk7',
+            'privateKey' => '3268625269af69822cf891dd65c46fef'
+        ]);
+        
         
         $newOrder->save();
         $count = 0;
@@ -49,7 +66,35 @@ class RestaurantController extends Controller
             }
             $count++;
         }
-        
-        return view('success');
+
+        $amount = $request->total_price;
+        $nonce = $request->payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => 'Mario',
+                'lastName' => 'Rossi',
+                'email' => 'mariorossi@mail.com',
+            ],
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+            
+        if ($result->success) {
+            $transaction = $result->transaction;
+            return view('success');
+        } else {
+            $errorString = "";
+
+            foreach ($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+
+            return back()->withErrors('An error occurred with the message: '.$result->message);
+        }
+            
     }
 }
