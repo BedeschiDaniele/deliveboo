@@ -2,10 +2,10 @@ footer {
     background-color:#0E151A;
     color: white;
     #footer-top{
-        height: 120px;
+        // height: 120px;
+        padding: 20px 0px;
         border-bottom:1px solid grey;
         .mycontainer {
-            padding: 20px 0px;
             display: flex;
             justify-content: space-between;
         }
@@ -42,11 +42,11 @@ footer {
         }
     }
     #footer-center {
-        height: 300px;
+        // height: 300px;
         border-bottom:1px solid grey;
+        padding: 50px 0px;
         .mycontainer{
             display: flex;
-            padding: 55px 0px;
             p {
                 color:#D7D7D7;
             }
@@ -79,23 +79,27 @@ footer {
         }  
     }
     #footer-bottom {
-        height: 80px;
+        // height: 80px;
         border-bottom:1px solid grey;
+        padding: 20px 0px;
         .mycontainer{
             display: flex;
             justify-content: space-between;
-            padding: 25px 0px;
-            .inline-ul li {
-                display: inline-block;
-                margin-right: 10px;
-                a  {
-                    color:#D7D7D7;
-                    text-decoration: none;
-                    transition: 0.2s;
-                    &:hover {
-                        color:$brand-orange;
+            .inline-ul {
+                margin: 0;
+                li {
+                    display: inline-block;
+                    margin-right: 10px;
+                    a  {
+                        color:#D7D7D7;
+                        text-decoration: none;
+                        transition: 0.2s;
+                        &:hover {
+                            color:$brand-orange;
+                        }
                     }
                 }
+                
             }
             img {
                 height: 45px;
@@ -114,9 +118,9 @@ footer {
 
 @media (max-width: 767px) {
     footer{
-        height: 1200px;
+        // height: 1200px;
         #footer-top{
-            padding: 0px 20px;
+            // padding: 0px 20px;
             input {
                 width: 150px;
                 padding: 0px;
@@ -128,7 +132,7 @@ footer {
         #footer-center {   
             border-bottom: 0px;
             .mycontainer{
-                padding-top: 20px;      
+                // padding-top: 20px;      
                 text-align: center;
                 flex-direction: column;
                 #left{      
