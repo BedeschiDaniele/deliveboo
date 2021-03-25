@@ -12,7 +12,7 @@
 			<div class="jumbotron-text">
 				<h1 class="home-h1">Choose, Order and Checkout</h1>
 				<h3 class="home-h3">Scegli il tuo piatto preferito e ordinalo direttamente da casa tua!</h3>
-				<a class="home-btn" href="#">Scopri i ristoranti</a>
+				<a class="home-btn" href="#restaurants-section">Scopri i ristoranti</a>
 			</div>
 		</div>
 	</div>
@@ -50,18 +50,18 @@
 		<div class="mycontainer">
 			<h2>Scegli la tua categoria preferita</h2>
 			<div class="carousel-container">
-				<div @click='setCategory(category)'
-					class="category-card" 
-					:class="selectedCategory== category.name ? 'cardActive' : ''" 
-					v-for="category in categories">
-					<img class="carousel-img" :src="category.img_path" alt="category.name">
-					<span class="carousel-text">@{{ category.name }}</span>
-				</div>
+						<div @click='setCategory(category)'
+							class="category-card" 
+							:class="selectedCategory== category.name ? 'cardActive' : ''" 
+							v-for="category in categories">
+							<img class="carousel-img" :src="category.img_path" alt="category.name">
+							<span class="carousel-text">@{{ category.name }}</span>
+						</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="home-restaurants">
+	<div id="restaurants-section" class="home-restaurants">
 		<div class="mycontainer">
 			
 			<h2 v-if='onSearch==false'>Tutti i nostri ristoranti</h2>
