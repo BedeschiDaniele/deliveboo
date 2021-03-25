@@ -15,10 +15,10 @@
  </div>
   {{-- /Restaurant Jumbotron Section --}}
 
-  <div class="mycontainer show-restaurant-container">
+  <div class="mycontainer show-restaurant-container row">
 
     {{-- Menu Section --}}
-    <div class="menu-container">
+    <div class="menu-container col-12  col-lg-6 col-xl-7">
       @foreach ($restaurant->dishes as $dish)
         @if($dish->visible == true)
           <div class="dish-card">
@@ -42,7 +42,7 @@
     {{-- /Menu Section --}}
 
     {{-- Cart Section --}}
-    <div class="cart-container">
+    <div class="cart-container col-12 col-lg-5 offset-lg-1 col-xl-4 offset-xl-1">
       <div class="checkout-restaurant">
         <span class="home-btn off-btn" v-if="calculateTotal == 0">Vai alla cassa</span>
         <a @click='checkout' class="home-btn" v-else href="{{ route('checkout', $restaurant->slug) }}">Vai alla cassa</a>
@@ -62,7 +62,6 @@
         <span>Totale</span>
         <span class="restaurant-total">€ @{{calculateTotal.toFixed(2)}}</span>
       </div>
-    </div>
     {{-- /Cart Section --}}
 
   </div>

@@ -79,9 +79,14 @@ $cardImage: 200px;
     padding-bottom: 20px;
     background-color: $homeGrey;
 
+    .mycontainer {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .CTA-card {
       display: inline-block;
-      width: 33%;
+      width: 32%;
       height: 100%;
       text-align: center;
     }
@@ -132,11 +137,14 @@ $cardImage: 200px;
     }
     
     .category-card {
+      display: inline-block;
       margin: 10px;
-      background-color: $homeGrey;
+      background-color: rgba(239, 242, 244, 0.8);
+      border: 2px solid $homeGrey;
       border-radius: 4px;
       transition: all 0.4s;
-      padding: 0 20px;
+      width: 190px;
+      flex: 1 0 auto;
 
       &:hover {
         cursor: pointer;
@@ -145,7 +153,12 @@ $cardImage: 200px;
     }
 
     .cardActive {
-      box-shadow: 0 0 10px darkgrey;
+      border: 2px solid rgba(255, 168, 3, 0.7);
+      box-shadow: 0 0 10px $brand-orange;
+      
+      &:hover {
+        box-shadow: 0 0 10px $brand-orange;
+      }
     }
 
     .carousel-img {
@@ -269,3 +282,21 @@ $cardImage: 200px;
 }
 
 // /Restaurants Section
+
+
+@media only screen and (max-width: 720px) {
+  .home-categories-carousel {
+    .category-card {
+      width: 80px;
+    }
+  
+    .carousel-img {
+      width: 50px;
+    }
+  
+    .carousel-text {
+      font-size: 1.02em;
+      font-weight: bold;
+    }
+  }
+}
