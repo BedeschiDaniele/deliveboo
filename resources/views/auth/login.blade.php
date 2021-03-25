@@ -1,9 +1,9 @@
 @extends('layouts.admin.login')
 
 @section('content')
-<div class="container space">
+<div class="mycontainer space">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12 col-md-8">
             <div class="card">
                 <div class="card-header text-center header">{{ __('Login') }}</div>
 
@@ -67,7 +67,7 @@
                                  @endif
                             </div>
                             <div class="col-md-8 offset-md-4">
-                                <a class="btn-link-orange" href="">
+                                <a class="btn-link-orange" href="{{ route('register') }}">
                                     {{ __('Non hai un account? Registrati ora!') }}
                             </div>
                         </div>

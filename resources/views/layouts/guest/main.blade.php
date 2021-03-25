@@ -26,5 +26,24 @@
         @include('guest.footer')
       </footer>
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function(){
+
+          // Login non effettuato
+          $(".hamburger").on('click', function() {
+          $(".route-in-out").toggleClass("menu--open");
+          });
+          
+          $(".hamburger").on('click', function() {
+          $(".home-jumbotron").toggleClass("back--none");
+          });
+
+          // Login effettuato
+          $(".hamburger").on('click', function() {
+          $(".user-logout").toggleClass("menu--open");
+          });
+        });
+      </script>
     </body>
 </html>

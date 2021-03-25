@@ -30,7 +30,13 @@
   text-decoration: none;
   color: #FFA803;
 }
+.login-header-top .dropdown-item, .register-header-top .dropdown-item {
+  width: 191px;
+  text-align: center;
+}
 .login-header-top .login, .register-header-top .login {
+  display: inline-block;
+  width: 191px;
   padding: 8px 50px;
   background-color: #FFA803;
   border-radius: 5px;
@@ -39,6 +45,7 @@
   color: white;
   font-weight: 700;
   transition: all 0.4s;
+  text-align: center;
 }
 .login-header-top .login:hover, .register-header-top .login:hover {
   text-decoration: none;
@@ -61,7 +68,42 @@
   color: #23CAD3;
   background-color: white;
 }
+.login-header-top .hamburger, .register-header-top .hamburger {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .back--none {
+    margin-top: 217px;
+  }
+
+  .register-header-top .route-in-out, .register-header-top .user-logout, .login-header-top .route-in-out, .login-header-top .user-logout {
+    position: absolute;
+    top: 88px;
+    right: 100%;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    background-color: #F8FAFC;
+    padding-bottom: 50px;
+  }
+  .register-header-top .menu--open, .login-header-top .menu--open {
+    right: 0px;
+    width: 100%;
+  }
+  .register-header-top h1, .login-header-top h1 {
+    font-size: 30px;
+  }
+  .register-header-top .register, .login-header-top .register {
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+  .register-header-top .hamburger, .login-header-top .hamburger {
+    display: block;
+    font-size: 30px;
+  }
+}
 .home-jumbotron {
   position: relative;
   height: 400px;
@@ -593,7 +635,7 @@ footer #copyright span {
   margin-left: 10%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .box {
     border-top: 1px solid #FFA803;
     border-left: none;

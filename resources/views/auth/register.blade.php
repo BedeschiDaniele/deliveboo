@@ -1,7 +1,7 @@
 @extends('layouts.admin.login')
 
 @section('content')
-<div class="container space">
+<div class="mycontainer space">
     <div class="row justify-content-center">
         <div>
             <div class="card">
@@ -123,7 +123,7 @@
                     </div>
             
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-8 offset-2 col-md-6 offset-md-4">
                                 <a href="{{ url('/') }}" class="btn btn-white" id="return">
                                     {{ __('Torna al sito') }}
                                 </a>
