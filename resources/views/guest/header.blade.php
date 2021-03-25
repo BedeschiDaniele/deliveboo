@@ -15,6 +15,9 @@
                 @csrf
             </form>
             </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </div>
        
@@ -27,6 +30,10 @@
                     @if (Route::has('register'))
                         <a class="register" href="{{ route('register') }}">Registrazione</a>
                     @endif
+                </div>
+
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
         </div>
