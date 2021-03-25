@@ -297,6 +297,18 @@
   color: peru;
 }
 
+@media only screen and (max-width: 720px) {
+  .home-categories-carousel .category-card {
+    width: 80px;
+  }
+  .home-categories-carousel .carousel-img {
+    width: 50px;
+  }
+  .home-categories-carousel .carousel-text {
+    font-size: 1.02em;
+    font-weight: bold;
+  }
+}
 footer {
   background-color: #0E151A;
   color: white;

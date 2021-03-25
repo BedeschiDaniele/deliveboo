@@ -282,3 +282,21 @@ $cardImage: 200px;
 }
 
 // /Restaurants Section
+
+
+@media only screen and (max-width: 720px) {
+  .home-categories-carousel {
+    .category-card {
+      width: 80px;
+    }
+  
+    .carousel-img {
+      width: 50px;
+    }
+  
+    .carousel-text {
+      font-size: 1.02em;
+      font-weight: bold;
+    }
+  }
+}
