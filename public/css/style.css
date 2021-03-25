@@ -291,11 +291,10 @@ footer {
   color: white;
 }
 footer #footer-top {
-  height: 120px;
+  padding: 20px 0px;
   border-bottom: 1px solid grey;
 }
 footer #footer-top .mycontainer {
-  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
 }
@@ -330,12 +329,11 @@ footer #footer-top select {
   border-radius: 3px;
 }
 footer #footer-center {
-  height: 300px;
   border-bottom: 1px solid grey;
+  padding: 50px 0px;
 }
 footer #footer-center .mycontainer {
   display: flex;
-  padding: 55px 0px;
 }
 footer #footer-center .mycontainer p {
   color: #D7D7D7;
@@ -366,13 +364,15 @@ footer #footer-center .mycontainer .inline-ul li {
   margin-right: 8px;
 }
 footer #footer-bottom {
-  height: 80px;
   border-bottom: 1px solid grey;
+  padding: 20px 0px;
 }
 footer #footer-bottom .mycontainer {
   display: flex;
   justify-content: space-between;
-  padding: 25px 0px;
+}
+footer #footer-bottom .mycontainer .inline-ul {
+  margin: 0;
 }
 footer #footer-bottom .mycontainer .inline-ul li {
   display: inline-block;
@@ -399,12 +399,6 @@ footer #copyright span {
 }
 
 @media (max-width: 767px) {
-  footer {
-    height: 1200px;
-  }
-  footer #footer-top {
-    padding: 0px 20px;
-  }
   footer #footer-top input {
     width: 150px;
     padding: 0px;
@@ -416,7 +410,6 @@ footer #copyright span {
     border-bottom: 0px;
   }
   footer #footer-center .mycontainer {
-    padding-top: 20px;
     text-align: center;
     flex-direction: column;
   }
@@ -858,9 +851,6 @@ main #success .mycontainer img {
   height: 200px;
 }
 
-#checkout .mycontainer {
-  padding: 20px 0 35px;
-}
 #checkout .home-btn:hover {
   color: #FFA803;
   background-color: white;
@@ -881,11 +871,12 @@ label {
   margin-bottom: 5px;
 }
 
+form {
+  margin: 20px 0;
+}
+
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  align-items: flex-start;
+  margin-bottom: 30px;
 }
 .wrapper .card-user {
   padding: 25px;
@@ -917,7 +908,11 @@ label {
   margin-top: 20px;
 }
 .wrapper .card-user .email-telephone .user-email {
+  width: 50%;
   margin-right: 30px;
+}
+.wrapper .card-user .email-telephone .user-telephone {
+  width: 50%;
 }
 .wrapper .card-user .user-address {
   width: 100%;
@@ -929,14 +924,15 @@ label {
   padding: 5px 10px;
   border-radius: 10px;
 }
-.wrapper .checkout-cart {
-  width: 35%;
-  position: relative;
-  padding: 0 0 10px;
+
+.checkout-cart {
+  margin-bottom: 30px;
+  padding: 20px;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 7px lightgrey;
 }
-.wrapper .checkout-cart .cart-top {
+.checkout-cart .cart-top {
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
@@ -947,8 +943,58 @@ label {
   font-weight: bold;
   background-color: #FFA803;
 }
-.wrapper .checkout-cart .dish-price {
+.checkout-cart .dish-price {
   display: inline-block;
   width: 20%;
   text-align: right;
+}
+.checkout-cart .show-cart {
+  padding: 8px;
+  border-bottom: 2px solid rgba(157, 157, 157, 0.2);
+  border-radius: 10px;
+}
+.checkout-cart .show-cart .quantity-section {
+  display: inline-block;
+  width: 25%;
+}
+.checkout-cart .show-cart .quantity-section .quantity-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-right: 2px;
+  font: 13px Arial, sans-serif;
+  font-weight: bold;
+  background-color: white;
+  color: #FFA803;
+  border: 2px solid #FFA803;
+  border-radius: 100%;
+  transition: all 0.4s;
+}
+.checkout-cart .show-cart .quantity-section .quantity-btn:hover {
+  cursor: pointer;
+  background-color: #FFA803;
+  color: white;
+}
+.checkout-cart .show-cart .quantity-section .plus-sign {
+  line-height: 1.34em;
+}
+.checkout-cart .show-cart .quantity-section .quantity-number {
+  margin-right: 2px;
+}
+.checkout-cart .show-cart .dish-name {
+  display: inline-block;
+  width: 50%;
+  font-size: 13px;
+}
+.checkout-cart .show-cart .dish-price {
+  font-size: 14px;
+}
+.checkout-cart .total-cart {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 8px 27px 5px 20px;
+  font-weight: bold;
+  font-size: 15px;
 }

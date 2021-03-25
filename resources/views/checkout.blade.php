@@ -31,62 +31,69 @@
         </ul>
     </div>
     @endif
+
+    
+    {{-- Form Dati Utente --}}
     <form action="{{ route('store', $restaurant->slug) }}" id="payment-form" method="POST">
       @method('POST')
       @csrf
-      <div class="wrapper">
-        <div class="card-user">
-          <h2>Dati Utente</h2>
-          <div class="name-surname">
-            <div class="user-name">
-              <label class="label">Nome Cognome</label>
-              <input type="text" name="customer_name" placeholder="Inserisci nome e cognome" value="{{ old('customer_name') }}">
-            </div>
-          </div>
-          <div class="email-telephone">
-            <div class="user-email">
-              <label class="label">Email</label>
-              <input type="text" name="customer_email" placeholder="Inserisci una email" value="{{ old('customer_email') }}">
-            </div>
-            <div class="user-telephone">
-              <label class="label">Telefono</label>
-              <input type="text" name="customer_phone" placeholder="Inserisci un numero di telefono" value="{{ old('customer_phone') }}">
-            </div>
-          </div>
-          <div class="user-address">
-            <label class="label">Indirizzo</label>
-            <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo" value="{{ old('customer_address') }}">
-          </div>
-          <label class="label">Note</label>
-          <textarea name="notes" rows="6">{{ old('notes') }}</textarea>
-        </div>
 
-        {{-- Carrello --}}
-        <div class="cart-container checkout-cart">
-          <div class="cart-top">Il tuo carrello</div>
-          <div class="show-cart" v-for='dish in cart'>
-            <span class="quantity-section">
-              <span class="quantity-btn minus-sign" @click='decreaseQuantity(dish)'>-</span>
-              <span class="quantity-number">@{{dish.quantity}}</span>
-              <span class="quantity-btn plus-sign" @click='increaseQuantity(dish)'>+</span>
-            </span>
-            <span class="dish-name">@{{dish.item.name}}</span>
-            <span class="dish-price">€ @{{(dish.item.price * dish.quantity).toFixed(2)}}</span>
-          </div>
-
-          <div class="total-cart">
-            <span>Totale</span>
-            <span class="restaurant-total">€ @{{calculateTotal}}</span>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="wrapper">
+            <div class="card-user">
+              <h2>Dati Utente</h2>
+              <div class="name-surname">
+                <div class="user-name">
+                  <label class="label">Nome e Cognome</label>
+                  <input type="text" name="customer_name" placeholder="Inserisci nome e cognome" value="{{ old('customer_name') }}">
+                </div>
+              </div>
+              <div class="email-telephone">
+                <div class="user-email">
+                  <label class="label">Email</label>
+                  <input type="text" name="customer_email" placeholder="Inserisci una email" value="{{ old('customer_email') }}">
+                </div>
+                <div class="user-telephone">
+                  <label class="label">Telefono</label>
+                  <input type="text" name="customer_phone" placeholder="Inserisci un n. di telefono" value="{{ old('customer_phone') }}">
+                </div>
+              </div>
+              <div class="user-address">
+                <label class="label">Indirizzo</label>
+                <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo" value="{{ old('customer_address') }}">
+              </div>
+              <label class="label">Note</label>
+              <textarea name="notes" rows="6">{{ old('notes') }}</textarea>
+            </div>
+            <input type = "hidden" name = "total_price" :value = "calculateTotal" />
+            <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
+            <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
           </div>
         </div>
+        <div class="col-12 col-md-6">
+          {{-- Carrello --}}
+          <div class="checkout-cart">
+            <div class="cart-top">Il tuo carrello</div>
+            <div class="show-cart" v-for='dish in cart'>
+              <span class="quantity-section">
+                <span class="quantity-btn minus-sign" @click='decreaseQuantity(dish)'>-</span>
+                <span class="quantity-number">@{{dish.quantity}}</span>
+                <span class="quantity-btn plus-sign" @click='increaseQuantity(dish)'>+</span>
+              </span>
+              <span class="dish-name">@{{dish.item.name}}</span>
+              <span class="dish-price">€ @{{(dish.item.price * dish.quantity).toFixed(2)}}</span>
+            </div>
 
-
-        <input type = "hidden" name = "total_price" :value = "calculateTotal" />
-        <input v-for ="dish in cart" type = "hidden" name = "dishes[]" :value = "dish.item.id"/>
-        <input v-for ="dish in cart" type = "hidden" name = "quantity[]" :value = "dish.quantity"/>
+            <div class="total-cart">
+              <span>Totale</span>
+              <span class="restaurant-total">€ @{{calculateTotal}}</span>
+            </div>
+          </div>
+        </div>
       </div>
-      {{-- Braintree --}}
 
+      {{-- Braintree --}}
       <div class="bt-drop-in-wrapper">
         <div id="bt-dropin"></div>
        </div>
@@ -105,34 +112,34 @@
 <script src="{{ asset('js/checkout.js') }}"></script>
 {{-- Braintree --}}
 <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
-    <script>
-        var form = document.querySelector('#payment-form');
-        var client_token = "{{ $token }}";
-        braintree.dropin.create({
-          authorization: client_token,
-          selector: '#bt-dropin',
-          paypal: {
-            flow: 'vault'
-          }
-        }, function (createErr, instance) {
-          if (createErr) {
-            console.log('Create Error', createErr);
+<script>
+    var form = document.querySelector('#payment-form');
+    var client_token = "{{ $token }}";
+    braintree.dropin.create({
+      authorization: client_token,
+      selector: '#bt-dropin',
+      paypal: {
+        flow: 'vault'
+      }
+    }, function (createErr, instance) {
+      if (createErr) {
+        console.log('Create Error', createErr);
+        return;
+      }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        instance.requestPaymentMethod(function (err, payload) {
+          if (err) {
+            console.log('Request Payment Method Error', err);
             return;
           }
-          form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            instance.requestPaymentMethod(function (err, payload) {
-              if (err) {
-                console.log('Request Payment Method Error', err);
-                return;
-              }
-              // Add the nonce to the form and submit
-              document.querySelector('#nonce').value = payload.nonce;
-              form.submit();
-            });
-          });
+          // Add the nonce to the form and submit
+          document.querySelector('#nonce').value = payload.nonce;
+          form.submit();
         });
-    </script>
+      });
+    });
+</script>
 @endsection
 
 
