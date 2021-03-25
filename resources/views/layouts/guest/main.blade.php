@@ -40,6 +40,10 @@
           $(".home-jumbotron").toggleClass("back--none");
           });
 
+          $(".hamburger").on('click', function() {
+          $(".restaurant-jumbotron").toggleClass("back--none");
+          });
+
           // Login effettuato
           $(".hamburger").on('click', function() {
           $(".user-logout").toggleClass("menu--open");

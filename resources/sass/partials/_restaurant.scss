@@ -280,6 +280,16 @@ $cardImage: 200px;
 
 //Media Query
 
+@media only screen and (max-width: 768px) {
+
+  #cart {
+    .back--none {
+      margin-top: 217px;
+   }
+  }
+  
+}
+
 @media only screen and (max-width: 720px) {
   .menu-container {
     .dish-card {
