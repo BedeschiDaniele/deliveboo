@@ -880,7 +880,7 @@ footer #copyright span {
     margin-bottom: 0.2em;
   }
   .menu-container .dish-card .card-text {
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 
   .home-CTA {
@@ -896,6 +896,12 @@ footer #copyright span {
   }
 }
 @media only screen and (max-width: 600px) {
+  .menu-container .dish-card .card-title {
+    font-size: 1.1em;
+  }
+  .menu-container .dish-card .card-text {
+    font-size: 0.85em;
+  }
   .menu-container .dish-card .image-container {
     max-width: 30%;
     overflow: hidden;

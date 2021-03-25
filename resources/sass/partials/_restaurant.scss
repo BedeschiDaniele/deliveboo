@@ -289,7 +289,7 @@ $cardImage: 200px;
       }
 
       .card-text {
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
       }
     }
   }
@@ -315,7 +315,13 @@ $cardImage: 200px;
 @media only screen and (max-width: 600px) {
   .menu-container {
     .dish-card {
-      // height: 140px;
+
+      .card-title {
+        font-size: 1.1em;
+      }
+      .card-text {
+        font-size: 0.85em;
+      }
 
       .image-container {
         max-width: 30%;
