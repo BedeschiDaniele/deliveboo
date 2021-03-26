@@ -9,7 +9,7 @@
 	<div class="home-jumbotron">
 		<div class="mycontainer">
 			<div class="overlay"></div>
-			<div class="jumbotron-text">
+			<div class="jumbotron-text" data-aos="fade-right">
 				<h1 class="home-h1">Choose, Order and Checkout</h1>
 				<h3 class="home-h3">Scegli il tuo piatto preferito e ordinalo direttamente da casa tua!</h3>
 				<a class="home-btn" href="#restaurants-section">Scopri i ristoranti</a>
@@ -53,7 +53,10 @@
 						<div @click='setCategory(category)'
 							class="category-card" 
 							:class="selectedCategory== category.name ? 'cardActive' : ''" 
-							v-for="category in categories">
+							v-for="category in categories"
+							data-aos="fade-up"
+							data-aos-anchor-placement="center-center"
+							data-aos-delay="200">
 							<img class="carousel-img" :src="category.img_path" alt="category.name">
 							<span class="carousel-text">@{{ category.name }}</span>
 						</div>
@@ -72,7 +75,8 @@
 					{{-- Tutti i ristoranti --}}
 					<div class="col-12 col-md-6 col-lg-4" 
 					v-for="(restaurant,indexRestaurant) in restaurants" 
-					v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false'>
+					v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false'
+					data-aos="zoom-in" data-aos-duration="5000" data-aos-delay="300"					>
 						<div class="restaurant-card">
 							<a :href="'/restaurant/'+restaurant.slug">
 								<div class="image-container">
@@ -97,7 +101,7 @@
 					<div class="col-12 col-md-6 col-lg-4"
 						v-if='filteredRestaurant.length > 0 && onSearch==false' 
 						v-for="(restaurant,indexRestaurant) in filteredRestaurant">
-						<div class="restaurant-card"  >
+						<div class="restaurant-card" data-aos="zoom-in" data-aos-duration="5000">
 							<a :href="'/restaurant/'+restaurant.slug">
 								<div class="image-container">
 									<img class="card-image" :src="'Storage/' + restaurant.img_path" :alt="restaurant.name">
@@ -124,8 +128,9 @@
 
 </div>
 
-<script src="{{ asset('js/app.js') }}"></script>
-		
-@endsection
-       
 
+@endsection
+
+@section('script')
+	<script src="{{ asset('js/app.js') }}"></script>
+@endsection
