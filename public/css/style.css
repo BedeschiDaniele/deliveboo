@@ -971,6 +971,14 @@ main #success .mycontainer img {
   margin: 30px 0px;
   height: 200px;
 }
+main #success .mycontainer .home-btn {
+  display: inline-block;
+  margin-top: 50px;
+}
+main #success .mycontainer .home-btn:hover {
+  color: #FFA803;
+  background-color: white;
+}
 
 #checkout .home-btn:hover {
   color: #FFA803;

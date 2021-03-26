@@ -109,6 +109,10 @@
 </div>
 
 
+
+@endsection
+
+@section('script')
 <script src="{{ asset('js/checkout.js') }}"></script>
 {{-- Braintree --}}
 <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
@@ -141,6 +145,5 @@
     });
 </script>
 @endsection
-
 
 

@@ -49386,9 +49386,8 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
       } catch (e) {
         localStorage.removeItem('cart');
       }
-    }
+    } // console.log(this.cart);
 
-    console.log(this.cart);
   }
 });
 })();

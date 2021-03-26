@@ -60,7 +60,7 @@ var app = new Vue({
         localStorage.removeItem('cart');
       }
     }
-    console.log(this.cart);
+    // console.log(this.cart);
   }
 })
 
