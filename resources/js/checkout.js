@@ -20,7 +20,7 @@ var app = new Vue({
         item: dish,
         quantity: 1
       });
-      console.log(this.cart);
+      // console.log(this.cart);
     },
     increaseQuantity(dish) {
       dish.quantity++;

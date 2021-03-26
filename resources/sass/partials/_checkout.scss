@@ -166,5 +166,16 @@ form {
   }
 }
 
-// Braintree
+@media screen and (max-width: 600px) {
+  .wrapper .card-user .email-telephone {
+    flex-direction: column;
+    .user-email{
+      width: 100%;
+    }
+    .user-telephone{
+      width: 100%;
+      margin-top: 20px;
+    } 
+  }
+}
 

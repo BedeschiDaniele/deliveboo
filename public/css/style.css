@@ -74,14 +74,14 @@
 
 @media (max-width: 768px) {
   .back--none {
-    margin-top: 217px;
+    margin-top: 180px;
   }
 
   .register-header-top .route-in-out, .register-header-top .user-logout, .login-header-top .route-in-out, .login-header-top .user-logout {
     position: absolute;
     top: 88px;
     right: 100%;
-    padding: 50px 30px;
+    padding: 0px 30px 50px;
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -909,7 +909,7 @@ footer #copyright span {
 
 @media only screen and (max-width: 768px) {
   #cart .back--none {
-    margin-top: 217px;
+    margin-top: 180px;
   }
 }
 @media only screen and (max-width: 720px) {
@@ -1118,4 +1118,17 @@ form {
   padding: 8px 27px 5px 20px;
   font-weight: bold;
   font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .card-user .email-telephone {
+    flex-direction: column;
+  }
+  .wrapper .card-user .email-telephone .user-email {
+    width: 100%;
+  }
+  .wrapper .card-user .email-telephone .user-telephone {
+    width: 100%;
+    margin-top: 20px;
+  }
 }

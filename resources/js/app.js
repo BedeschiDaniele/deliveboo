@@ -46,7 +46,7 @@ var app = new Vue({
           this.onSearch=false;
           if(response.data.length > 0 ) {
             this.filteredRestaurant = response.data;
-            console.log(response.data);
+            // console.log(response.data);
           } else {
             this.onSearch=true;
           }
@@ -64,7 +64,7 @@ var app = new Vue({
         this.selectedCategory = 'all';
         this.filterCategory();
       }
-      console.log(this.selectedCategory);
+      // console.log(this.selectedCategory);
     }
   }
 })

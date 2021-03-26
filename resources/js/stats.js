@@ -54,9 +54,17 @@ const stats = new Vue({
                 label: "Guadagno totale: " + yearPrice + "€",
                 backgroundColor: 'rgba(255, 168, 3 , 0.4)',
                 borderColor: 'rgb(255, 168, 3)',
-                data: monthsPrice
+                data: monthsPrice,
               }]
             },
+            options: {
+              legend: {
+                  labels: {
+                      // This more specific font property overrides the global property
+                      fontSize: 16,
+                  }
+              },
+          }
 
             });
 

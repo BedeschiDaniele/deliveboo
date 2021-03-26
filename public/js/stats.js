@@ -49378,6 +49378,14 @@ var stats = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
               borderColor: 'rgb(255, 168, 3)',
               data: monthsPrice
             }]
+          },
+          options: {
+            legend: {
+              labels: {
+                // This more specific font property overrides the global property
+                fontSize: 16
+              }
+            }
           }
         });
       });

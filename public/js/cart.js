@@ -49347,8 +49347,7 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
       this.cart.push({
         item: dish,
         quantity: 1
-      });
-      console.log(this.cart);
+      }); // console.log(this.cart);
     },
     increaseQuantity: function increaseQuantity(dish) {
       dish.quantity++;

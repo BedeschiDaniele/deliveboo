@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container text-center" id="dashboard-cards">
+        <h1 class="mb-3">Benvenuto {{ Auth::user()->name }}</h1>
         <div class="row">
             <div class="col-12 col-sm-6 offset-lg-2 col-lg-4">
                 <div class="card card-black">

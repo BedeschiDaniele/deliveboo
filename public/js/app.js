@@ -1885,8 +1885,7 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
           _this2.onSearch = false;
 
           if (response.data.length > 0) {
-            _this2.filteredRestaurant = response.data;
-            console.log(response.data);
+            _this2.filteredRestaurant = response.data; // console.log(response.data);
           } else {
             _this2.onSearch = true;
           }
@@ -1903,9 +1902,8 @@ var app = new (vue_dist_vue__WEBPACK_IMPORTED_MODULE_1___default())({
       } else if (this.selectedCategory == category.name) {
         this.selectedCategory = 'all';
         this.filterCategory();
-      }
+      } // console.log(this.selectedCategory);
 
-      console.log(this.selectedCategory);
     }
   }
 });
