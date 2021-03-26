@@ -53,10 +53,7 @@
 						<div @click='setCategory(category)'
 							class="category-card" 
 							:class="selectedCategory== category.name ? 'cardActive' : ''" 
-							v-for="category in categories"
-							data-aos="fade-up"
-							data-aos-anchor-placement="center-center"
-							data-aos-delay="200">
+							v-for="category in categories">
 							<img class="carousel-img" :src="category.img_path" alt="category.name">
 							<span class="carousel-text">@{{ category.name }}</span>
 						</div>

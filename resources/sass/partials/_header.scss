@@ -3,21 +3,33 @@
   align-items: center;
 }
 
+#logo {
+  svg {
+    height: 50px;
+    fill: $brand-heavenly;
+    transition: all 0.4s;
+    &:hover {
+      fill: $brand-orange;
+    }
+  }
+}
+
 .login-header-top, .register-header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-  #logo {
-    a {
-      color: black;
-      transition: all 0.4s;   
-      &:hover {
-        text-decoration: none;
-        color: $brand-orange;
-      }
-    }
-  }
+  // #logo {
+  //   a {
+  //     color: black;
+  //     transition: all 0.4s;   
+  //     &:hover {
+  //       text-decoration: none;
+  //       color: $brand-orange;
+  //     }
+  //   }
+  // }
+    
 
   .dropdown-item {
     width: 191px;

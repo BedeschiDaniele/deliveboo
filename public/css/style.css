@@ -16,19 +16,20 @@
   align-items: center;
 }
 
+#logo svg {
+  height: 50px;
+  fill: #23CAD3;
+  transition: all 0.4s;
+}
+#logo svg:hover {
+  fill: #FFA803;
+}
+
 .login-header-top, .register-header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-}
-.login-header-top #logo a, .register-header-top #logo a {
-  color: black;
-  transition: all 0.4s;
-}
-.login-header-top #logo a:hover, .register-header-top #logo a:hover {
-  text-decoration: none;
-  color: #FFA803;
 }
 .login-header-top .dropdown-item, .register-header-top .dropdown-item {
   width: 191px;
