@@ -9,7 +9,7 @@
 	<div class="home-jumbotron">
 		<div class="mycontainer">
 			<div class="overlay"></div>
-			<div class="jumbotron-text" data-aos="fade-right">
+			<div class="jumbotron-text" data-aos="fade-right" data-aos-delay="300" data-aos-duration="3000">
 				<h1 class="home-h1">Choose, Order and Checkout</h1>
 				<h3 class="home-h3">Scegli il tuo piatto preferito e ordinalo direttamente da casa tua!</h3>
 				<a class="home-btn" href="#restaurants-section">Scopri i ristoranti</a>
@@ -73,7 +73,7 @@
 					<div class="col-12 col-md-6 col-lg-4" 
 					v-for="(restaurant,indexRestaurant) in restaurants" 
 					v-if='restaurants.length > 0 && filteredRestaurant.length == 0 && onSearch==false'
-					data-aos="zoom-in" data-aos-duration="5000" data-aos-delay="300"					>
+					data-aos="zoom-in" data-aos-duration="900" data-aos-delay="300">
 						<div class="restaurant-card">
 							<a :href="'/restaurant/'+restaurant.slug">
 								<div class="image-container">
@@ -98,7 +98,7 @@
 					<div class="col-12 col-md-6 col-lg-4"
 						v-if='filteredRestaurant.length > 0 && onSearch==false' 
 						v-for="(restaurant,indexRestaurant) in filteredRestaurant">
-						<div class="restaurant-card" data-aos="zoom-in" data-aos-duration="5000">
+						<div class="restaurant-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">
 							<a :href="'/restaurant/'+restaurant.slug">
 								<div class="image-container">
 									<img class="card-image" :src="'Storage/' + restaurant.img_path" :alt="restaurant.name">

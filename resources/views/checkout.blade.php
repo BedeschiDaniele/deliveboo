@@ -1,26 +1,16 @@
 @extends('layouts.guest.main')
 
 
-{{-- @section('guest.header2')
-<div class="mycontainer">
-  <div class="login-header-top">
-      <h1 id="logo"><a href="{{ url('/') }}">Deliveboo</a></h1>
-      <div class="back-restaurant">
-          <a class="login" href="{{ route('restaurant', $restaurant->slug) }}">Torna al ristorante</a>
-      </div>
-  </div>
-@endsection --}}
-
 @section('content')
 <div id="checkout">
   <div class="restaurant-jumbotron" style="background-image: url({{ asset('storage/' . $restaurant->img_path)}})">
     <div class="overlay"></div>
-  <div class="mycontainer">
-      <div class="jumbotron-text">
-        <h1>{{$restaurant->name}}</h1>
-      </div>
+    <div class="mycontainer" data-aos="fade-right" data-aos-delay="180" data-aos-duration="3000">
+        <div class="jumbotron-text">
+          <h1>{{$restaurant->name}}</h1>
+        </div>
+    </div>
   </div>
- </div>
   <div class="mycontainer">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -41,7 +31,7 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="wrapper">
-            <div class="card-user">
+            <div class="card-user" data-aos="fade-right" data-aos-delay="220" data-aos-duration="1000">
               <h2>Dati Utente</h2>
               <div class="name-surname">
                 <div class="user-name">
@@ -73,7 +63,7 @@
         </div>
         <div class="col-12 col-md-6">
           {{-- Carrello --}}
-          <div class="checkout-cart">
+          <div class="checkout-cart" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
             <div class="cart-top">Il tuo carrello</div>
             <div class="show-cart" v-for='dish in cart'>
               <span class="quantity-section">
@@ -94,9 +84,9 @@
       </div>
 
       {{-- Braintree --}}
-      <div class="bt-drop-in-wrapper">
+      <div class="bt-drop-in-wrapper" data-aos="fade-right" data-aos-delay="0" data-aos-duration="3700">
         <div id="bt-dropin"></div>
-       </div>
+      </div>
       <div class="clearfix">
         <a class="home-btn float-left" href="{{ route('restaurant', $restaurant->slug) }}" @click='saveLocalStorage'>Torna indietro</a>
         <input id="nonce" name="payment_method_nonce" type="hidden" />
