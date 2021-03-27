@@ -47,7 +47,7 @@
         <span class="home-btn off-btn" v-if="calculateTotal == 0">Vai alla cassa</span>
         <a @click='checkout' class="home-btn" v-else href="{{ route('checkout', $restaurant->slug) }}">Vai alla cassa</a>
       </div>
-      <div class="show-cart" v-for='dish in cart'>
+      <div class="show-cart" v-for='dish in cart' data-aos="zoom-in" data-aos-duration="200">
         {{-- <img :src="'./../storage/' + dish.item.img_path" :alt="dish.item.name"> --}}
         <span class="quantity-section">
           <span class="quantity-btn minus-sign" @click='decreaseQuantity(dish)'>-</span>

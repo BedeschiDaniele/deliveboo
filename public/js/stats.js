@@ -49373,7 +49373,7 @@ var stats = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
           data: {
             labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
             datasets: [{
-              label: "Guadagno totale: " + yearPrice + "€",
+              label: "Guadagno totale: " + yearPrice.toFixed(2) + "€",
               backgroundColor: 'rgba(255, 168, 3 , 0.4)',
               borderColor: 'rgb(255, 168, 3)',
               data: monthsPrice
