@@ -36,22 +36,22 @@
               <div class="name-surname">
                 <div class="user-name">
                   <label class="label">Nome e Cognome</label>
-                  <input type="text" name="customer_name" placeholder="Inserisci nome e cognome" value="{{ old('customer_name') }}">
+                  <input type="text" name="customer_name" placeholder="Inserisci nome e cognome" value="{{ old('customer_name') }}" required>
                 </div>
               </div>
               <div class="email-telephone">
                 <div class="user-email">
                   <label class="label">Email</label>
-                  <input type="text" name="customer_email" placeholder="Inserisci una email" value="{{ old('customer_email') }}">
+                  <input type="email" name="customer_email" placeholder="Inserisci una email" value="{{ old('customer_email') }}" required>
                 </div>
                 <div class="user-telephone">
                   <label class="label">Telefono</label>
-                  <input type="text" name="customer_phone" placeholder="Inserisci un n. di telefono" value="{{ old('customer_phone') }}">
+                  <input type="tel" pattern="[0-9]{10}" name="customer_phone" placeholder="Inserisci un n. di telefono" value="{{ old('customer_phone') }}" required>
                 </div>
               </div>
               <div class="user-address">
                 <label class="label">Indirizzo</label>
-                <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo" value="{{ old('customer_address') }}">
+                <input type="text" name="customer_address" placeholder="Inserisci l'indirizzo" value="{{ old('customer_address') }}" required>
               </div>
               <label class="label">Note</label>
               <textarea name="notes" rows="6">{{ old('notes') }}</textarea>
