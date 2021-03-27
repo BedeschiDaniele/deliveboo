@@ -1221,25 +1221,25 @@ body {
     stroke: #3498DB;
   }
   24% {
-    stroke: #643232;
+    stroke: #a70053;
   }
   25% {
-    stroke: #327864;
+    stroke: rgba(0, 105, 54, 0.9);
   }
   49% {
-    stroke: #327864;
+    stroke: rgba(11, 218, 119, 0.9);
   }
   50% {
-    stroke: #32326e;
+    stroke: #23CAD3;
   }
   74% {
-    stroke: #32326e;
+    stroke: #23CAD3;
   }
   75% {
-    stroke: #78325a;
+    stroke: #f8f0f5;
   }
   99% {
-    stroke: #78325a;
+    stroke: rgba(255, 168, 3, 0.8);
   }
 }
 @keyframes stroke-color {
@@ -1247,24 +1247,24 @@ body {
     stroke: #3498DB;
   }
   24% {
-    stroke: #643232;
+    stroke: #a70053;
   }
   25% {
-    stroke: #327864;
+    stroke: #00bd61;
   }
   49% {
-    stroke: #327864;
+    stroke: #0bda77;
   }
   50% {
-    stroke: #32326e;
+    stroke: rgba(255, 168, 3, 0.8);
   }
   74% {
-    stroke: #32326e;
+    stroke: #ffa803;
   }
   75% {
-    stroke: #78325a;
+    stroke: #0898a0;
   }
   99% {
-    stroke: #78325a;
+    stroke: #00edfa;
   }
 }
