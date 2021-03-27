@@ -46,7 +46,7 @@
                 </div>
                 <div class="user-telephone">
                   <label class="label">Telefono</label>
-                  <input type="tel" pattern="[0-9]{10}" name="customer_phone" placeholder="Inserisci un n. di telefono" value="{{ old('customer_phone') }}" required>
+                  <input type="number" name="customer_phone" placeholder="Inserisci un n. di telefono" value="{{ old('customer_phone') }}" required>
                 </div>
               </div>
               <div class="user-address">

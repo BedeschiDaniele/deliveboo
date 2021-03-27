@@ -60,19 +60,29 @@ form {
     .email-telephone {
       display: flex;
       margin-top: 20px;
+
       .user-email{
         width: 50%;
         margin-right: 30px;
       }
+
       .user-telephone{
         width: 50%;
+        -moz-appearance: textfield;
       } 
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
     }
+
     .user-address {
       width: 100%;
       margin-top: 20px;
       margin-bottom: 20px;
     }
+
     textarea {
       width: 100%;
       padding: 5px 10px;

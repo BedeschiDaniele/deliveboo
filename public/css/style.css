@@ -1043,6 +1043,12 @@ form {
 }
 .wrapper .card-user .email-telephone .user-telephone {
   width: 50%;
+  -moz-appearance: textfield;
+}
+.wrapper .card-user .email-telephone input::-webkit-outer-spin-button,
+.wrapper .card-user .email-telephone input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .wrapper .card-user .user-address {
   width: 100%;
