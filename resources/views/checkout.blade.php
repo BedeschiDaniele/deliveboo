@@ -96,9 +96,17 @@
 
     </form>
   </div>
+
+  {{-- Loading --}}
+  <div id="loading">
+    <svg width="250" height="250" viewBox="0 0 100 100">
+      <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+      <polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+      <polyline class="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+      <polyline class="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+    </svg>
+  </div>
 </div>
-
-
 
 @endsection
 
@@ -109,6 +117,8 @@
 <script>
     var form = document.querySelector('#payment-form');
     var client_token = "{{ $token }}";
+    var onBox = $("#loading");
+    onBox.addClass("not-active")
     braintree.dropin.create({
       authorization: client_token,
       selector: '#bt-dropin',
@@ -121,9 +131,11 @@
         return;
       }
       form.addEventListener('submit', function (event) {
+        onBox.removeClass('not-active').addClass('active-container').fadeIn('slow');
         event.preventDefault();
         instance.requestPaymentMethod(function (err, payload) {
           if (err) {
+            onBox.removeClass('active-container').addClass('not-active').fadeIn('slow');
             console.log('Request Payment Method Error', err);
             return;
           }
