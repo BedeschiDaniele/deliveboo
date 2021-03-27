@@ -22,12 +22,6 @@
             <td><strong>Nome del piatto</strong></td>
             <td>{{ $dish->name }}</td>
         </tr>
-        {{-- <tr>
-            <td><strong>Immagine</strong></td>
-            <td>
-                <img src="{{ asset('storage/' . $dish->img_path) }}" alt="{{ $dish->name }}">
-            </td>
-        </tr> --}}
         <tr>
             <td><strong>Prezzo</strong></td>
             <td>{{ $dish->price }} €</td>
@@ -57,4 +51,8 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/app.js') }}" defer></script>
 @endsection

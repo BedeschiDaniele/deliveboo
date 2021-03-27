@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('chart')
+@section('scripts')
 
 <div id="stats">
     <div class="container">
