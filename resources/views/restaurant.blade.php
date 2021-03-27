@@ -31,7 +31,7 @@
                   <p class="card-text">{{ $dish->description }}</p>
                 </div>
                 <div class="add-dish">
-                  <span @click='addToCart({!! json_encode($dish) !!})'><i class="fas fa-plus"></i></span>
+                  <span @click='addToCart({{ json_encode($dish) }})'><i class="fas fa-plus"></i></span>
                   <span class="dish-price">&euro; {{ number_format($dish->price, 2) }}</span>
                 </div>
               </div>
