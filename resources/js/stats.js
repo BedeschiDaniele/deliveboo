@@ -22,14 +22,15 @@ const stats = new Vue({
             let orders = response.data;
             const self = this;
 
+
             orders.forEach(
               (element) => {
                 let orderCreateDate = element.created_at; 
                 let orderTotalPrice = element.total_price;
 
                 if(orderCreateDate.substr(0, 4) == self.year){
-                  for(var i = 1; i <= 12; i++){
-                    if(orderCreateDate.substr(5, 2) == '0' + i){
+                  for(var i = 0; i <= 12; i++){
+                    if(orderCreateDate.substr(5, 2) == i){
                      monthsPrice[i - 1] += orderTotalPrice;
                     }
                   }
