@@ -1,18 +1,18 @@
 <div id="footer-top">
     <div class="mycontainer">
         <div>
-            <span>Connect with us for update and offers.</span>
+            <span>Iscriviti alla nostra newsletter.</span>
             <div>
                 <form action="">
-                    <input type="email"placeholder="Enter your email">
-                    <button>Subscribe now</button>
+                    <input type="email"placeholder="Inserisci email">
+                    <button>Iscriviti</button>
                 </form>
             </div>
         </div>
         <div>
             <select name="" id="">
-                <option value="En">English</option>
                 <option value="It">Italiano</option>
+                <option value="En">English</option>                
             </select>
         </div>
     </div>
@@ -27,30 +27,30 @@
             <div>
                 <h4>About Deliveboo</h4>
                 <ul>
-                    <li><a href="">About us</a> </li>
-                    <li><a href="">Carrers</a></li>
+                    <li><a href="">Chi siamo</a> </li>
+                    <li><a href="">Carriere</a></li>
                     <li><a href="">Blog</a></li>
                     <li><a href="">Developers</a></li>
                     <li><a href="">Mobile apps</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="">Contatti</a></li>
                 </ul>
             </div>
             <div>
             <h4>Business</h4>
                 <ul>
-                    <li><a href="">Add a restaurant</a></li>
-                    <li><a href="">Buniess Order Guidelines</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">Book</a></li>
-                    <li><a href="">Trace</a></li>
-                    <li><a href="">Advertise</a></li>
+                    <li><a href="">Aggiungi ristorante</a></li>
+                    <li><a href="">Come ordinare</a></li>
+                    <li><a href="">Ordini</a></li>
+                    <li><a href="">Prenotazioni</a></li>
+                    <li><a href="">Tracking</a></li>
+                    <li><a href="">Pubblicita'</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Partner with us</h4>
+                <h4>Diventa nostro partner</h4>
                 <ul>
-                    <li><a href="">For restaurant</a></li>
-                    <li><a href="">For drivers</a></li>
+                    <li><a href="">Per Ristoratori</a></li>
+                    <li><a href="">Per Fattorini</a></li>
                 </ul>
                 <ul class="inline-ul">
                     <li><i class="fab fa-facebook"></i></li>
@@ -68,7 +68,7 @@
         <div>
             <ul class="inline-ul">
                 <li><a href="">Privacy</a></li>
-                <li><a href="">Terms & conditions</a></li>
+                <li><a href="">Termini & condizioni</a></li>
                 <li><a href="">Sitemap</a></li>
             </ul>
         </div>
@@ -76,7 +76,7 @@
 </div>
 <div id="copyright">
     <div class="mycontainer">
-        <p>© Copyright 2021 <span>Deliveboo</span> by Boolean Team 6. All Rights Reserved.</p>
+        <p>© Copyright 2021 <span>Deliveboo</span> by Boolean <strong>Team 6</strong>. Tutti i diritti sono riservati.</p>
     </div>
 </div>
 
